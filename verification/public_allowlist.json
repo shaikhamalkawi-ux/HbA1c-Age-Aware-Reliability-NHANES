@@ -17,7 +17,6 @@
   "derived_outputs/primary_interval_metrics.csv",
   "derived_outputs/recovered_original_cqr_metrics.csv",
   "derived_outputs/temporal_metrics.csv",
-  "docs/.review-ready",
   "docs/CHECKPOINT_1.md",
   "docs/CHECKPOINT_2.md",
   "docs/CLAIM_BOUNDARIES.md",
