@@ -1,6 +1,6 @@
 {
   "scope": "Exact public text allowlist and specified lexical checks only; history, numerical and license verification are separate",
-  "files_scanned": 63,
+  "files_scanned": 60,
   "status": "PASS",
   "findings": []
 }
