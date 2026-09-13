@@ -51,6 +51,14 @@ The repository exposes only public-safe aggregate verification artifacts, includ
 
 Raw NHANES XPT files, participant-level analytic cohorts, participant predictions, split ledgers, and private research archives are deliberately excluded from the public release candidate.
 
+## Licensing
+
+The license gate is closed:
+
+- original code where the author has authority to grant the license: MIT (`LICENSE`);
+- original documentation, original figures, and original aggregate derived materials where the applicable rightsholder has authority to grant the license: CC BY 4.0 (`CONTENT_LICENSE.md`);
+- third-party materials retain their own terms.
+
 ## Environment
 
 The original analytical record and the independent QA environment are documented separately in [ENVIRONMENT.md](ENVIRONMENT.md) and `requirements-analysis.txt`. Missing historical versions are reported as missing rather than guessed.
@@ -59,8 +67,9 @@ The original analytical record and the independent QA environment are documented
 
 1. Repository skeleton: complete.
 2. Numerical/scientific QA: **complete PASS**.
-3. Public-release candidate: pending license approval and history/public-safety closure.
-4. GitHub `v1.0.0`: create only after final public-release approval.
-5. Zenodo: archive the approved production release and verify DOI/metadata.
+3. License mapping: **complete PASS**.
+4. Public-history privacy cleanup and final safety rerun: pending.
+5. GitHub `v1.0.0`: create only after the history/public-safety gate passes.
+6. Zenodo: archive the approved production release and verify DOI/metadata.
 
 `CITATION.cff` remains the intended metadata authority. No competing `.zenodo.json` is used.
