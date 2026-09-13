@@ -1,0 +1,30 @@
+{
+  "source_cycle": "NHANES 2017-2018 J",
+  "source_cohort_n": 2219,
+  "training_n": 1775,
+  "calibration_n": 444,
+  "split_method": "StratifiedShuffleSplit by age group, calibration fraction 0.20, random_state=20260912",
+  "random_state": 20260912,
+  "predictor_order": ["Age", "BMI", "FastingGlucose", "Triglycerides"],
+  "standardization_mean": [51.19887323943662, 29.89481690140845, 114.57971830985916, 115.30985915492958],
+  "standardization_scale": [17.42610633013015, 7.334826526765477, 38.42971612711693, 109.08114456669476],
+  "standardized_intercept": 5.88856338028169,
+  "standardized_coefficients": [0.13121032746489147, 0.05541430702870975, 0.9477153953527155, 0.0017831973863322874],
+  "raw_scale_intercept": 2.449670075346158,
+  "raw_scale_coefficients": {
+    "Age": 0.0075295263886933665,
+    "BMI": 0.007554958092941625,
+    "FastingGlucose": 0.02466100431806169,
+    "Triglycerides": 1.634743927023977e-05
+  },
+  "conformal_quantiles_abs_residual": {
+    "global": {"0.1": 0.8070130279745653, "0.05": 1.1398926919235173},
+    "Age 20-39": {"0.1": 0.6394855277780342, "0.05": 0.919630883391906},
+    "Age 40-64": {"0.1": 0.7539988977539949, "0.05": 1.231843406783268},
+    "Age 65+": {"0.1": 1.0327313959681845, "0.05": 2.1898158949662268}
+  },
+  "freeze_json_sha256": "980333416af8db7132897b41c9ee024a0d8a3eb6ec5dfcd639ea3440a8b69f90",
+  "source_role_ledger_sha256": "e027e808fdef242e1e9784729bcf8259a9c6a9ee76963fb5916498d9d4ed95c9",
+  "no_target_retraining": true,
+  "no_target_recalibration_primary": true
+}
