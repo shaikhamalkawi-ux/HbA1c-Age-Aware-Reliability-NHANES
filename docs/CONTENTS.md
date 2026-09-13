@@ -2,20 +2,21 @@
 
 ## Public scientific/reproducibility contents
 
-The repository publishes public-safe documentation, verification code, exact source identities, and aggregate outputs. Participant-level material remains excluded.
+The release publishes public-safe documentation, verification code, exact source identities, aggregate outputs, and frozen certificates. Participant-level material remains excluded.
 
 ### Core documentation and metadata
 
 - `README.md`
 - `CITATION.cff`
-- `LICENSE_PENDING.md` until the author approves the production license mapping
+- `RELEASE_NOTES_v1.0.0.md`
+- `LICENSE` — MIT for original code where the author has authority to grant it
+- `CONTENT_LICENSE.md` — CC BY 4.0 for original documentation, original figures, and original aggregate derived materials where the applicable rightsholder has authority to grant it
 - `docs/CLAIM_BOUNDARIES.md`
 - `docs/REPRODUCIBILITY.md`
 - `docs/ENVIRONMENT.md`
 - `docs/SCIENTIFIC_VERIFICATION.md`
 - `docs/PUBLIC_SAFETY.md`
 - `docs/LICENSE_DECISION.md`
-- checkpoint notes retained during review but removed from the production tag
 
 ### Data/source provenance
 
@@ -56,12 +57,11 @@ The repository publishes public-safe documentation, verification code, exact sou
 
 The public repository is intended to expose enough aggregate evidence, code, source hashes and provenance to inspect the reported analysis without republishing participant-level records.
 
-## Production snapshot cleanup
+## Remaining production gates
 
-Before `v1.0.0`:
+The license gate is complete. Before `v1.0.0`:
 
-1. remove `docs/CHECKPOINT_1.md`, `docs/CHECKPOINT_2.md` and `docs/zenodo_metadata_draft.json` from the tagged source snapshot;
-2. replace `LICENSE_PENDING.md` with the author-approved license notices and material mapping;
-3. update `CITATION.cff` with the approved license, version `1.0.0`, and verified release date;
-4. close the documented Git-history contact-metadata finding and rerun the all-history scan;
-5. regenerate the exact allowlist, manifest and public-content report for the production commit.
+1. close the documented Git-history contact-metadata finding and rerun the all-history scan;
+2. regenerate the exact allowlist, manifest and public-content report for the final production commit;
+3. add the verified release date to `CITATION.cff` at the time of the actual production release;
+4. create the GitHub release and verify Zenodo ingestion/DOI metadata.

@@ -15,10 +15,10 @@ jobs:
         with:
           fetch-depth: 0
       - name: Regenerate public bookkeeping
-        if: github.ref == 'refs/heads/checkpoint-2-adjudicated'
+        if: github.ref == 'refs/heads/checkpoint-2-adjudicated' || github.ref == 'refs/heads/release-candidate-v1.0.0'
         run: python3 scripts/regenerate_public_metadata.py
       - name: Commit regenerated bookkeeping
-        if: github.ref == 'refs/heads/checkpoint-2-adjudicated'
+        if: github.ref == 'refs/heads/checkpoint-2-adjudicated' || github.ref == 'refs/heads/release-candidate-v1.0.0'
         run: |
           if ! git diff --quiet -- verification/public_allowlist.json verification/public_content_report.json SHA256SUMS.txt; then
             git config user.name 'github-actions[bot]'

@@ -6,7 +6,7 @@ This repository makes the locked study's source reconstruction, leakage-free eva
 
 > **Age did not consistently justify separate point-prediction models, but it mattered more strongly for predictive reliability/calibration.**
 
-**Checkpoint 2 scientific QA: 16/16 check families PASS.** The original stop on a `WTSAF2YR` decimal-equality check was independently adjudicated as a representation/rounding difference that cannot alter the zero-versus-positive fasting eligibility gate; the exact evidence is recorded in [`verification/fasting_weight_adjudication.json`](verification/fasting_weight_adjudication.json). Production `v1.0.0` and Zenodo remain **HOLD** until the license decision and final public-release review are complete.
+**Scientific QA is closed PASS: 16/16 registered check families PASS.** The earlier `WTSAF2YR` stop was adjudicated as a decimal-representation difference that cannot alter the zero-versus-positive fasting eligibility gate; the exact evidence is recorded in [`verification/fasting_weight_adjudication.json`](verification/fasting_weight_adjudication.json). The **v1.0.0** production materials have passed the license, public-content, manifest, reporting, and reachable-history checks. See [the public-safety review](docs/PUBLIC_SAFETY.md).
 
 ## What was audited and corrected?
 
@@ -91,6 +91,14 @@ Raw NHANES XPT files and participant-level analytic tables are not redistributed
 
 The repository intentionally excludes literature/publisher PDFs, journal correspondence, private conversations, manuscripts, private contact files, participant-level derived tables, and internal project-transfer archives.
 
+## Licensing
+
+- Original code whose rights the author can grant is released under the **MIT License**; see [`LICENSE`](LICENSE).
+- Original documentation, original figures, and original aggregate derived materials whose rights the applicable rightsholder can grant are released under **CC BY 4.0**; see [`CONTENT_LICENSE.md`](CONTENT_LICENSE.md).
+- Third-party material retains its own terms and is not relicensed by this repository.
+
+The approved mapping is recorded in [`docs/LICENSE_DECISION.md`](docs/LICENSE_DECISION.md).
+
 ## Repository checks
 
 Current repository-integrity checks use only the Python standard library:
@@ -98,6 +106,9 @@ Current repository-integrity checks use only the Python standard library:
 ```sh
 python scripts/verify_manifest.py
 python scripts/check_public_content.py
+python scripts/check_verification_report.py
+python scripts/check_final_scientific_summary.py
+python scripts/scan_git_history.py
 ```
 
 Scientific-analysis environment information is documented separately in [`docs/ENVIRONMENT.md`](docs/ENVIRONMENT.md) and `requirements-analysis.txt`.
@@ -112,6 +123,6 @@ Authors, in the locked manuscript order: Hussein AlWedyan; Abdulwehab Ibrahim; A
 
 There is no final article DOI yet. Repository citation metadata are in [`CITATION.cff`](CITATION.cff); no manuscript DOI or ORCID has been invented.
 
-## Release status
+## Release
 
-No license has yet been approved. See [`docs/LICENSE_DECISION.md`](docs/LICENSE_DECISION.md) and [`LICENSE_PENDING.md`](LICENSE_PENDING.md). The planned first production release is **v1.0.0**. A GitHub production release and Zenodo DOI will be created only after license approval and the final public-release gate.
+Version: **v1.0.0**. See [`RELEASE_NOTES_v1.0.0.md`](RELEASE_NOTES_v1.0.0.md) for the release scope and exclusions. Repository citation metadata are maintained in `CITATION.cff`; the Zenodo DOI is added after archival verification.
