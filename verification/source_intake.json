@@ -1,0 +1,70 @@
+{
+  "status": "PASS",
+  "root_archive_sha256": "7df5030e47723024eaa835a40e07d680db7a7ccabc323f2adc09907be43dc056",
+  "nested_archives": [
+    {
+      "child_sha256": "ec798b7b1e71a50b7060777f52ad5b1d6595b3446de3bdcbc63aa3c9f042f839",
+      "parent_sha256": "7df5030e47723024eaa835a40e07d680db7a7ccabc323f2adc09907be43dc056",
+      "status": "PASS"
+    },
+    {
+      "child_sha256": "ff4cc0b3048a9e2e38a02f3c8695a72760607be2d59da28bd09ae525c77f52cd",
+      "parent_sha256": "ec798b7b1e71a50b7060777f52ad5b1d6595b3446de3bdcbc63aa3c9f042f839",
+      "status": "PASS"
+    },
+    {
+      "child_sha256": "7cfde975de23b7d2fdea6cc81ea0964aefe8b6532f26079645341101791df085",
+      "parent_sha256": "ff4cc0b3048a9e2e38a02f3c8695a72760607be2d59da28bd09ae525c77f52cd",
+      "status": "PASS"
+    },
+    {
+      "child_sha256": "e63344743e354eda50c9ac295b291526ff81ddc6510dd412129432d2110c6142",
+      "parent_sha256": "ff4cc0b3048a9e2e38a02f3c8695a72760607be2d59da28bd09ae525c77f52cd",
+      "status": "PASS"
+    },
+    {
+      "child_sha256": "90a25b97df2ba3f967a1a110805720a694fc5d5a6ae7e2e230e91f2178454db9",
+      "parent_sha256": "e63344743e354eda50c9ac295b291526ff81ddc6510dd412129432d2110c6142",
+      "status": "PASS"
+    },
+    {
+      "child_sha256": "1b89bc1a0ed1f3f98c0532c2d5901df0303c93e08eb2c728f89ed0a3bafabc24",
+      "parent_sha256": "90a25b97df2ba3f967a1a110805720a694fc5d5a6ae7e2e230e91f2178454db9",
+      "status": "PASS"
+    },
+    {
+      "child_sha256": "416dbddc421a560c4268db60ec316f5cae8e2f938be96c61f0a30d045177101c",
+      "parent_sha256": "90a25b97df2ba3f967a1a110805720a694fc5d5a6ae7e2e230e91f2178454db9",
+      "status": "PASS"
+    },
+    {
+      "child_sha256": "69b36e98584384d424cc4086d9a1546071ffa32132891784392eae0d51aa8e24",
+      "parent_sha256": "416dbddc421a560c4268db60ec316f5cae8e2f938be96c61f0a30d045177101c",
+      "status": "PASS"
+    },
+    {
+      "child_sha256": "3785515cffffbaf1969a8226e30de4cc3564dc5b5d36e69da5a86c7a0b424709",
+      "parent_sha256": "416dbddc421a560c4268db60ec316f5cae8e2f938be96c61f0a30d045177101c",
+      "status": "PASS"
+    },
+    {
+      "child_sha256": "8531d6e2ee89a19587ce548f2935fe30bdb00805a923593267478564de7d3ede",
+      "parent_sha256": "ec798b7b1e71a50b7060777f52ad5b1d6595b3446de3bdcbc63aa3c9f042f839",
+      "status": "PASS"
+    }
+  ],
+  "manifests": [
+    {
+      "manifest_sha256": "af5262ab0bed937663556176cb171f21832bb18cc1248b4a791b46ef4f848f75",
+      "entries_verified": 43,
+      "status": "PASS"
+    },
+    {
+      "manifest_sha256": "d406ac7fd4b56d23786e91fcb8a67922a6ea072b9455fba2af541682c378111a",
+      "entries_verified": 57,
+      "status": "PASS"
+    }
+  ],
+  "selected_input_count": 52,
+  "raw_and_participant_files_public": false
+}

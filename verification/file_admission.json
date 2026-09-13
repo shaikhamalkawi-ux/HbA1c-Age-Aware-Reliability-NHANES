@@ -1,0 +1,35 @@
+{
+  "newly_admitted": [
+    ".github/workflows/integrity.yml",
+    "docs/CHECKPOINT_2.md",
+    "docs/ENVIRONMENT.md",
+    "docs/LICENSE_DECISION.md",
+    "docs/PUBLIC_SAFETY.md",
+    "docs/SCIENTIFIC_VERIFICATION.md",
+    "requirements-analysis.txt",
+    "scripts/check_verification_report.py",
+    "scripts/fis_arithmetic.py",
+    "scripts/prepare_evidence.py",
+    "scripts/retrieve_nhanes.py",
+    "scripts/scan_git_history.py",
+    "scripts/verify_science.py",
+    "verification/data_provenance.json",
+    "verification/environment.json",
+    "verification/evidence_inputs.json",
+    "verification/execution_artifacts.json",
+    "verification/file_admission.json",
+    "verification/history_safety_report.json",
+    "verification/source_intake.json"
+  ],
+  "intentionally_excluded": [
+    "18 raw CDC XPT components",
+    "participant-level cohort, reconstruction, calibration and prediction CSVs",
+    "MAT arrays containing original participant rows",
+    "full research and nested archives",
+    "manuscripts and manuscript source",
+    "original source scripts containing absolute host paths",
+    "original model objects, CQR exploratory objects and figures pending later admission",
+    "correspondence, private contacts, credentials and publisher PDFs"
+  ],
+  "scientific_data_values_modified": false
+}

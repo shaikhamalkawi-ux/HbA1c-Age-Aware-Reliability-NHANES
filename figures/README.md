@@ -1,3 +1,5 @@
 # Figures
 
-Reserved for audited original study figures with verified provenance and redistribution status. No figure is regenerated, altered, or included at this checkpoint.
+No study figures have been admitted during this stopped checkpoint. No new scientific plot or analysis was created.
+
+See [scientific verification](../docs/SCIENTIFIC_VERIFICATION.md) and [input identities](../verification/evidence_inputs.json).

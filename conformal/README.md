@@ -1,9 +1,5 @@
-# Conformal evidence intake
+# Conformal
 
-Keep three evidence roles distinct:
+Global residual and age-Mondrian remain primary; their stored interval metrics and calibration-only q checks passed. Recovered original CQR stored-output arithmetic is secondary. Later fixed CQR stays post hoc exploratory and was not substituted.
 
-1. Primary global residual and age-Mondrian calibration.
-2. Secondary recovered original CQR outputs.
-3. Later fixed-configuration CQR, post hoc exploratory only.
-
-Pending: original calibration-only split membership, residuals/nonconformity scores, quantile conventions, q-values, interval endpoints, age coverage, widths/scores, and CQR provenance. Later model-object hashes cannot establish the identity of unavailable original CQR model objects.
+See [scientific verification](../docs/SCIENTIFIC_VERIFICATION.md) and [input identities](../verification/evidence_inputs.json).

@@ -34,5 +34,21 @@
     "status": "HOLD",
     "planned_tag": "v1.0.0"
   },
-  "doi": null
+  "doi": null,
+  "associated_manuscript_authors": {
+    "status": "PASS",
+    "source_manuscript_tex_sha256": "b2385709219aeec5f2a246db2ec63a7156185245b2ef1019e47db3f8a264b9e8",
+    "observed_order": [
+      "Hussein AlWedyan",
+      "Abdulwehab Ibrahim",
+      "Ashraf Shalafeh",
+      "Puteri Fahsyar",
+      "Mohanad Alata",
+      "Mazin Abuharaz",
+      "Mohammad AlWidian"
+    ],
+    "scope": "Separate README manuscript authorship; CFF and draft archive creator remain Ghassan Malkawi only."
+  },
+  "cff_sha256": "8c65518ee32b574001fac9e3e10ce82669650b1fc3e9cb50c7a96dd7f16b79a5",
+  "metadata_authority": "CITATION.cff; no .zenodo.json"
 }

@@ -1,0 +1,35 @@
+{
+  "scope": "Exact executable/reference bytes used in the stopped run and canonical public equivalents. Replacing LF with CRLF reconstructs an executed CRLF file. JSON values and Python source tokens are unchanged.",
+  "artifacts": [
+    {
+      "path": "scripts/verify_science.py",
+      "executed_sha256": "278c054b6d11da2b2156d0847c5d42b0ec8303bc4c77bf36204a20701e0d308b",
+      "repository_sha256": "278c054b6d11da2b2156d0847c5d42b0ec8303bc4c77bf36204a20701e0d308b",
+      "change": "none"
+    },
+    {
+      "path": "scripts/fis_arithmetic.py",
+      "executed_sha256": "e6a7ecbcb1f5f144b21cbffadcef20858d17fa6c493c4488f574d1872e98cc2d",
+      "repository_sha256": "d138468ef80d97ed0e6a9d5e67f496beca99c38ae2e9d1752f9be3b8eb045601",
+      "change": "CRLF to LF only"
+    },
+    {
+      "path": "verification/locked_reference.json",
+      "executed_sha256": "41fd0c53e6237edacd7b504ee94d219b670b31f62eeffcf1ee066fd180928d3f",
+      "repository_sha256": "e53cb4da633fb1e3056ff741ef6d4e057fed77779344c25bc3bc61dc43379076",
+      "change": "CRLF to LF only"
+    },
+    {
+      "path": "verification/evidence_inputs.json",
+      "executed_sha256": "04481e27166b140ab78d5f7114fe1a4758660599416edaea29953525f60e3c59",
+      "repository_sha256": "283291033db02b1ba9a8b1cc4df6ac10e47848a441b56d9ee5bf4c98de049436",
+      "change": "CRLF to LF only"
+    },
+    {
+      "path": "verification/data_provenance.json",
+      "executed_sha256": "cc65553128126bb6d82a0232e621a82797c8a667c28727a2bfd05bbbd45fff0d",
+      "repository_sha256": "5bb6d3e4c095adb9093f6871248b598f5845021eea028605c74f88b52d0bd53e",
+      "change": "CRLF to LF only"
+    }
+  ]
+}

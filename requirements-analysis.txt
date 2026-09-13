@@ -1,0 +1,10 @@
+# Checkpoint numerical QA only. Validated with Python 3.12.14 on Windows.
+# These three scientific versions match the recovered original arithmetic environment.
+numpy==2.3.5
+pandas==2.2.3
+scipy==1.17.0
+# Transitive versions in the executed checkpoint environment:
+python-dateutil==2.9.0.post0
+pytz==2026.3.post1
+six==1.17.0
+tzdata==2026.4
