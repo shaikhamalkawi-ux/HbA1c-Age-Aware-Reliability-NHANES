@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "checkpoint": "checkpoint_2_final_adjudicated",
+  "overall_status": "PASS",
+  "release_gate": "HOLD_LICENSE_AND_PUBLIC_RELEASE",
+  "locked_science_changed": false,
+  "full_primary_training_refit_performed": false,
+  "raw_cdc_end_to_end_refit_claimed": false,
+  "summary": {
+    "check_families": 16,
+    "pass": 16,
+    "hold": 0,
+    "fail": 0
+  },
+  "scope_note": "The final checkpoint verifies the locked archived inputs/outputs, recomputes registered metrics, verifies official-data provenance/eligibility checks, and adjudicates the single WTSAF2YR representation discrepancy without changing a locked scientific value. It does not claim a fresh end-to-end refit of every learner family from raw CDC files.",
+  "checks": [
+    {"id":"reconstructed_cohort","status":"PASS","basis":"2325/2325 exact six-field source matches; 0 ambiguous/unmatched; 2325 unique SEQN. The previously flagged WTSAF2YR max difference of 5.000003147870302e-05 is a stored-CSV representation/rounding difference: CDC reports the official range maximum as 944153.24975 while the archived reconstruction stores 944153.2498. The difference cannot alter the zero-versus-positive eligibility class; see fasting_weight_adjudication.json."},
+    {"id":"corrected_cohort","status":"PASS","observed":{"n":2219,"seqn_unique":true,"positive_fasting_weights":true,"fasting_minutes_min":480.0,"fasting_minutes_max":1439.0,"missing_ldl_rows":25,"all_missing_ldl_tg_ge_400":true}},
+    {"id":"age_group_counts","status":"PASS","observed":{"20-39":666,"40-64":991,"65+":562}},
+    {"id":"point_model_rmse","status":"PASS","observed":{"pooled_ols":0.5732523421784678,"hard_age_ols":0.5774212774999247,"glucose_only_ols":0.5862355212293419,"smoothvc_ols":0.591183742180368,"pooled_lightgbm":0.5937450777180617,"hard_age_lightgbm":0.6601329855676891},"verification":"direct recomputation from 66,570 stored repeated-OOF prediction rows"},
+    {"id":"paired_contrasts","status":"PASS","observed":{"hard_age_ols_minus_pooled_ols":0.004168935321456901,"hard_age_lightgbm_minus_pooled_lightgbm":0.06638790784962734,"smoothvc_minus_pooled_ols":0.017931400001900077,"pooled_lightgbm_minus_pooled_ols":0.020492735539593965,"pooled_ols_minus_glucose_only":-0.012983179050874094}},
+    {"id":"bootstrap_ci","status":"PASS","observed":{"hard_age_ols_minus_pooled_ols_ci95":[-0.0026392764511016576,0.012260032153039797]},"verification":"10,000 participant-level age-stratified bootstrap resamples; seed 20260912"},
+    {"id":"global_q","status":"PASS","observed":{"q90":0.8070130279745653,"q95":1.1398926919235173},"verification":"fresh deterministic 1775/444 source split and pooled-OLS residual quantiles"},
+    {"id":"mondrian_q","status":"PASS","observed":{"20-39_q90":0.6394855277780342,"40-64_q90":0.7539988977539949,"65plus_q90":1.0327313959681845,"20-39_q95":0.919630883391906,"40-64_q95":1.231843406783268,"65plus_q95":2.1898158949662268}},
+    {"id":"age_coverage","status":"PASS","observed":{"global_90":[0.9621621621621622,0.8928355196770938,0.8562277580071175],"mondrian_90":[0.912012012012012,0.9037336024217961,0.893594306049822]}},
+    {"id":"interval_metrics","status":"PASS","observed":{"global_90_interval_score":2.68707924518505,"mondrian_90_interval_score":2.6385159688983326}},
+    {"id":"temporal_counts","status":"PASS","observed":{"2015-2016_n":2235,"2015-2016_age_counts":[712,970,553],"2021-2023_n":2808,"2021-2023_age_counts":[670,1203,935]}},
+    {"id":"temporal_metrics","status":"PASS","observed":{"2015-2016_rmse":0.6579939891772845,"2015-2016_calibration_slope":1.0421080502582822,"2021-2023_rmse":0.567695949765773,"2021-2023_calibration_slope":1.047288084302036}},
+    {"id":"tg_bridge","status":"PASS","observed":{"formula":"TG_old = -12.19 + 0.9785 * TG_new","max_abs_difference_mg_dl":0.0}},
+    {"id":"original_cqr","status":"PASS","verification":"recomputed from recovered original stored interval endpoints; no full learner refit claimed","observed":{"internal_90_interval_score":2.413035,"forward_90_interval_score":2.283125236132289,"max_abs_difference_vs_archived_metrics":4.440892098500626e-16}},
+    {"id":"frozen_hashes","status":"PASS","observed":{"freeze_json_sha256":"980333416af8db7132897b41c9ee024a0d8a3eb6ec5dfcd639ea3440a8b69f90","source_role_ledger_sha256":"e027e808fdef242e1e9784729bcf8259a9c6a9ee76963fb5916498d9d4ed95c9"}},
+    {"id":"anfis_parameters","status":"PASS","observed":{"sugeno_fis_models":3,"rules":41,"parameters_checked":533,"parameter_matches_at_6dp":533,"legacy_rows_evaluated":2325,"max_fis_vs_matlab_prediction_difference":1.4690471061840071e-12}}
+  ]
+}
