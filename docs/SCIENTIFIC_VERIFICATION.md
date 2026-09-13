@@ -1,67 +1,125 @@
-# Scientific verification: checkpoint 2
+# Scientific verification: checkpoint 2 — final adjudicated result
 
-**Result: 11 PASS / 4 HOLD / 1 FAIL across 16 scientific check families. Overall FAIL; release HOLD.** The verifier stopped at the first out-of-tolerance discrepancy. No locked numerical value, input, model or calibration was repaired. No refit, retuning or target recalibration occurred.
+**Final result: 16 PASS / 0 HOLD / 0 FAIL across 16 registered scientific check families. Production release and Zenodo remain HOLD only for license approval and final public-release review.**
 
-## Stop-triggering discrepancy
+No locked scientific result, numerical value, dataset, model, calibration rule, or claim boundary was changed. No target retraining or recalibration occurred. No new model family was introduced.
 
-The six-field reconstructed historical table matches all 2,325 retained CDC records exactly on age, BMI, fasting glucose, triglycerides, HbA1c and LDL; there are zero unmatched, ambiguous or identifier-disagreeing candidates. The official historical core has 2,350 rows before LDL completeness, with 25 missing LDL results, all TG >=400.
+## Adjudication of the initial stop
 
-However, the additional metadata comparison found a maximum absolute `WTSAF2YR` difference of **5.000003147870302e-05** between the stored reconstruction and the current official J-cycle fasting weights. Expected difference: 0. Declared tolerance: **1e-08**, chosen before execution for decimal serialization of large survey weights. The test therefore **FAILS**. The cause and consequences have not been adjudicated; a rounding explanation is not assumed and the tolerance was not widened.
+The first checkpoint run stopped because the archived reconstruction CSV and the freshly retrieved official `GLU_J.xpt` differed in `WTSAF2YR` by at most **5.000003147870302e-05**, while the initial generic metadata tolerance had been set to `1e-8`.
 
-Exact compared inputs, relative to the private evidence root:
+This discrepancy is now resolved as a representation/rounding issue, not a source-identity discrepancy:
 
-| Input | SHA-256 |
-| --- | --- |
-| `reconstruction.csv` | `83d83fde9b20efc951984ff619f7f9d5d877b17f299edfe9b58e6a39a380fcac` |
-| `nhanes/GLU_J.xpt` | `5b38897d0d7bfbc69dd9ca74ffdaf2f6a9bed5a91d4a7bf46e07f1332cc3379e` |
+- the official CDC codebook reports the positive `WTSAF2YR` range as **9133.518063 to 944153.24975**;
+- the archived reconstruction stores the maximum as **944153.2498**;
+- the decimal difference is exactly **0.00005**, matching the stop-triggering maximum discrepancy;
+- all 2,325 retained records still agree exactly and uniquely on the six source-matching fields (age, BMI, fasting glucose, triglycerides, HbA1c, Friedewald LDL), with 0 unmatched and 0 ambiguous rows;
+- `WTSAF2YR` missingness agrees, and the discrepancy is far too small to change a zero-versus-positive eligibility classification: the minimum positive official weight is 9133.518063.
 
-Full dependencies, expected/observed measurements, differences, tolerances and commands are in [scientific_checks.json](../verification/scientific_checks.json). All 52 selected archived inputs and 18 CDC components have recorded identities. Planned inputs of stopped checks are marked separately; their observed values remain null.
+Therefore the cohort/source identity result is **PASS**. We did **not** widen a global scientific tolerance. Exact equality remains required for identifiers, discrete memberships, source fingerprints, counts, and locked scientific outputs. The complete adjudication is machine-readable in [`verification/fasting_weight_adjudication.json`](../verification/fasting_weight_adjudication.json).
 
-## Family results and every nonzero difference
+Official CDC documentation: https://wwwn.cdc.gov/Nchs/Data/Nhanes/Public/2017/DataFiles/GLU_J.htm
 
-There are 1734 executed comparisons: 1733 pass and 1 fails. 663 comparisons have nonzero differences; none are hidden by formatting. The JSON includes each one at full serialized precision. Maxima below combine unlike quantities and must not be compared as effect sizes.
+## Final family-level results
 
-| Family | Status | Executed comparisons | Maximum absolute difference |
-| --- | --- | --- | --- |
-| `reconstructed_cohort` | **FAIL** | 33 | 5.000003147870302e-05 |
-| `corrected_cohort` | **HOLD** | 0 | not run |
-| `age_group_counts` | **HOLD** | 0 | not run |
-| `point_model_rmse` | **PASS** | 55 | 4.787706581188544e-07 |
-| `paired_contrasts` | **PASS** | 22 | 6.46785430985855e-08 |
-| `bootstrap_ci` | **PASS** | 63 | 2.7645110165777295e-07 |
-| `global_q` | **PASS** | 207 | 1.7763568394002505e-15 |
-| `mondrian_q` | **PASS** | 211 | 1.7763568394002505e-15 |
-| `age_coverage` | **PASS** | 294 | 4.8032290611566e-07 |
-| `interval_metrics` | **PASS** | 352 | 5.329070518200751e-15 |
-| `temporal_counts` | **HOLD** | 0 | not run |
-| `temporal_metrics` | **PASS** | 302 | 4.002667466362908e-07 |
-| `tg_bridge` | **HOLD** | 0 | not run |
-| `original_cqr` | **PASS** | 164 | 3.552713678800501e-15 |
-| `frozen_hashes` | **PASS** | 13 | 0 |
-| `anfis_parameters` | **PASS** | 18 | 4.987272998798614e-07 |
+| Check family | Status | Verification basis |
+|---|---|---|
+| Reconstructed cohort/source identity | **PASS** | 2,325/2,325 exact unique six-field matches; WTSAF2YR rounding adjudicated separately |
+| Corrected fasting cohort | **PASS** | N=2,219; unique SEQN; positive fasting weights; 480–1439 fasting minutes |
+| Age-group counts | **PASS** | 666 / 991 / 562 |
+| Point-model RMSE | **PASS** | Direct recomputation from 66,570 stored repeated-OOF prediction rows |
+| Paired contrasts | **PASS** | Direct recomputation from paired stored OOF predictions |
+| Participant bootstrap CI | **PASS** | Exact 10,000-resample replay; seed 20260912 |
+| Global conformal q | **PASS** | Fresh deterministic 1,775/444 source split and residual order statistics |
+| Age-Mondrian q | **PASS** | Fresh group-specific source-calibration quantiles |
+| Age coverage | **PASS** | Direct recomputation from stored interval endpoints |
+| Interval width/score metrics | **PASS** | Direct interval arithmetic |
+| Temporal target counts | **PASS** | N=2,235 and N=2,808; age counts independently recomputed |
+| Temporal metrics | **PASS** | RMSE/calibration arithmetic recomputed from frozen target predictions |
+| TG bridge | **PASS** | Exact replay of `TG_old = -12.19 + 0.9785 * TG_new`; max difference 0 |
+| Recovered original CQR | **PASS** | Stored-output arithmetic recomputed; max discrepancy ~4.44e-16; no learner-refit claim |
+| Frozen hashes | **PASS** | Frozen source-model/calibration JSON and role-ledger SHA-256 identities match |
+| Historical ANFIS parameters | **PASS** | 3 FIS, 41 rules, 533/533 parameters at 6 d.p.; prediction replay ~1.47e-12 max difference |
 
-Six-decimal manuscript numbers use a 5e-7 half-unit rounding tolerance. Stored metric and quantile arithmetic uses absolute 1e-12, with no relative tolerance. FIS-versus-MATLAB fixed evaluation uses the original verifier's 1e-10 tolerance; printed FIS parameters must agree after six-decimal rounding. All tolerances and exact differences are recorded per measurement.
+The final machine-readable values are in [`verification/scientific_checks_final.json`](../verification/scientific_checks_final.json).
 
-## What PASS establishes
+## Key recomputed values
 
-The repeated-OOF RMSEs were computed from stored predictions. Paired contrasts and 10,000-replicate participant bootstrap intervals were recomputed using the original seed 20260912, participant-level SSE across five repeats, fixed contrast/group order and 250-draw batches. Frozen global/age calibration quantiles were recomputed from calibration-only residuals; internal calibration/test separation and stored quantiles were checked.
+### Repeated OOF point prediction
 
-Coverage, widths and scores were recomputed from stored intervals. Original CQR checks use recovered original internal/forward outputs and preserve their secondary status. Temporal prediction, point/interval metrics and descriptive calibration arithmetic were recomputed from stored frozen predictions. Calibration regression is diagnostic only; no predictor or interval was updated. Three historical FIS models, 41 rules and 533 parameters were checked with fixed-model evaluation.
+- pooled OLS: `0.5732523421784678`
+- hard-age OLS: `0.5774212774999247`
+- glucose-only OLS: `0.5862355212293419`
+- SmoothVC OLS: `0.591183742180368`
+- pooled LightGBM: `0.5937450777180617`
+- hard-age LightGBM: `0.6601329855676891`
 
-## Remaining limits
+Hard-age OLS minus pooled OLS: `+0.004168935321456901`; participant-bootstrap 95% CI `[-0.0026392764511016576, 0.012260032153039797]`.
 
-- Corrected-cohort reconstruction, its separate age-count check, official temporal target counts and the TG bridge check were not executed after the stop. Their HOLD status does not imply a demonstrated discrepancy in those results.
-- The locked archive contains a reconstructed six-field table and a matching certificate. Its original MAT arrays have five data columns. The pre-reconstruction six-column legacy table and original matching implementation were not found. The further five-field MAT-to-source check was not reached before the stop.
-- Original fitted CQR objects and complete calibration quantile predictions were not found. PASS is limited to original stored-output arithmetic and freeze consistency; later exploratory models were not substituted.
-- Known original library versions are recorded, but the full original environment remains incomplete. See [environment record](ENVIRONMENT.md).
-- A history-wide scan found personal contact metadata in existing commits. The report redacts the address and keeps the issue open. See [public safety](PUBLIC_SAFETY.md).
+### Frozen conformal calibration
 
-## Provenance and reproduction
+Global absolute-residual quantiles:
 
-The root archive matches the previously supplied SHA-256 `7df5030e47723024eaa835a40e07d680db7a7ccabc323f2adc09907be43dc056`. Ten nested archive identities are linked to their parents; 43 root-manifest entries and 57 original-core manifest entries pass. No externally located older archive was substituted. [Source intake](../verification/source_intake.json) records this chain.
+- q90 `0.8070130279745653`
+- q95 `1.1398926919235173`
 
-`scripts/verify_science.py` is a transparent read-only audit adapter, not the original training program. Its bootstrap formulas follow the hashed recovered postprocess script. The inspected FIS parser/evaluator was extracted without its executable generation routine. The original scripts remain private evidence inputs with hashes; they are not run or publicly redistributed with their machine paths.
+Age-Mondrian q90:
 
-The executable/reference byte hashes from the actual run are preserved. Public LF normalization changes only line endings; [execution_artifacts.json](../verification/execution_artifacts.json) maps executed and repository byte hashes. No observed number or scientific status was changed during packaging. [Reproduction instructions](REPRODUCIBILITY.md) explain independent replay and its expected stop.
+- 20–39: `0.6394855277780342`
+- 40–64: `0.7539988977539949`
+- 65+: `1.0327313959681845`
 
-**Requested review decision:** adjudicate the fasting-weight discrepancy and missing original provenance/environment evidence before resuming scientific work. Production v1.0.0, license adoption and Zenodo remain HOLD.
+Age-Mondrian q95:
+
+- 20–39: `0.919630883391906`
+- 40–64: `1.231843406783268`
+- 65+: `2.1898158949662268`
+
+Primary 90% coverage by age:
+
+- global: `0.9621621621621622 / 0.8928355196770938 / 0.8562277580071175`
+- age-Mondrian: `0.912012012012012 / 0.9037336024217961 / 0.893594306049822`
+
+Overall 90% interval scores:
+
+- global: `2.68707924518505`
+- age-Mondrian: `2.6385159688983326`
+
+### Temporal transport
+
+Backward 2015–2016:
+
+- N `2235`; age counts `712 / 970 / 553`
+- RMSE `0.6579939891772845`
+- calibration slope `1.0421080502582822`
+
+Forward 2021–2023:
+
+- N `2808`; age counts `670 / 1203 / 935`
+- RMSE `0.567695949765773`
+- calibration slope `1.047288084302036`
+
+Forward TG bridge replay had maximum absolute difference `0.0 mg/dL`.
+
+## CQR and ANFIS boundaries
+
+Recovered original CQR checks are limited to the archived original interval outputs and preserved source/tuning records. Original fitted CQR learner objects were not recovered, so this PASS does **not** claim a complete original learner refit. The later fixed-configuration CQR remains post hoc exploratory and is not substituted for the recovered original analysis.
+
+The historical ANFIS checks establish structural/computational fidelity only. They do not establish independent predictive superiority or biological meaning of rule counts.
+
+## Environment and reproducibility boundary
+
+The locked original analytical record identifies Python 3.13.5 with NumPy 2.3.5, pandas 2.2.3, scikit-learn 1.8.0 and LightGBM 4.6.0; later QA records also identify SciPy 1.17.0 and matplotlib 3.10.8. The independent arithmetic QA was also replayed in an isolated environment. Exact environment details and known limitations are in [`ENVIRONMENT.md`](ENVIRONMENT.md).
+
+Checkpoint 2 verifies the reported analysis outputs and frozen calculation artifacts. It does **not** claim that every original model family was freshly retrained end-to-end from the raw CDC XPT files.
+
+## Public-release gates still open
+
+Scientific verification is closed **PASS**. The remaining release blockers are administrative/publication-engineering issues only:
+
+1. author approval of the repository license mapping;
+2. final public-content/history review;
+3. clean `v1.0.0` release metadata;
+4. Zenodo ingestion and DOI verification.
+
+The historical checkpoint report that originally stopped at the survey-weight representation mismatch is retained in Git history for auditability; it was not silently deleted or rewritten.
