@@ -2,11 +2,11 @@
 
 **Does age justify separate HbA1c prediction models, or does it matter more for the reliability of their prediction intervals?**
 
-This repository makes the locked study's source reconstruction, leakage-free evaluation records, uncertainty calibration, and temporal transport auditable without redistributing participant-level NHANES data.
+This repository provides public reproducibility and verification materials for the associated HbA1c reliability study without redistributing participant-level NHANES data.
 
-> **Age did not consistently justify separate point-prediction models, but it mattered more strongly for predictive reliability/calibration.**
+> **Hard age partitioning did not show a stable point-prediction advantage, whereas age-specific predictive-reliability differences persisted across NHANES cycles.**
 
-**Scientific QA is closed PASS: 16/16 registered check families PASS.** The earlier `WTSAF2YR` stop was adjudicated as a decimal-representation difference that cannot alter the zero-versus-positive fasting eligibility gate; the exact evidence is recorded in [`verification/fasting_weight_adjudication.json`](verification/fasting_weight_adjudication.json). The **v1.0.1** production materials have passed the license, public-content, manifest, reporting, and reachable-history checks. See [the public-safety review](docs/PUBLIC_SAFETY.md).
+Scientific verification is closed PASS: **16/16 registered scientific check families PASS**. The verification covers source identity/cohort closure, repeated out-of-fold metrics and participant-bootstrap contrasts, conformal quantiles and coverage arithmetic, temporal counts/metrics, the triglyceride bridge, recovered secondary CQR outputs, frozen-object identity, and historical ANFIS structural replay. It does **not** claim fresh end-to-end retraining of every model family from raw CDC files.
 
 ## What was audited and corrected?
 
@@ -14,13 +14,13 @@ The historical analysis used a table of 2,325 adults whose official source and e
 
 The historical reduction from 2,350 to 2,325 is explained by 25 missing Friedewald-LDL values; all 25 had triglycerides greater than 400 mg/dL. LDL completeness is not required by the four-input HbA1c prediction question.
 
-The corrected development cohort removes the LDL-completeness requirement and applies the locked fasting eligibility. It contains **2,219 adults**, with **666 / 991 / 562** in the age groups **20–39 / 40–64 / 65+**.
+The corrected development cohort contains **2,219 adults**, with **666 / 991 / 562** in the age groups **20–39 / 40–64 / 65+**.
 
 ## Locked point-prediction findings
 
 Internal evaluation used 5 folds × 5 repeats of out-of-fold testing with participant-level bootstrap contrasts.
 
-| Model | Recomputed repeated-OOF RMSE |
+| Model | Repeated-OOF RMSE |
 |---|---:|
 | Pooled OLS | 0.5732523422 |
 | Hard-age OLS | 0.5774212775 |
@@ -29,7 +29,7 @@ Internal evaluation used 5 folds × 5 repeats of out-of-fold testing with partic
 | Pooled LightGBM | 0.5937450777 |
 | Hard-age LightGBM | 0.6601329856 |
 
-Hard-age OLS minus pooled OLS was **+0.0041689353**, with participant-bootstrap 95% CI **[−0.0026392765, +0.0122600322]**. This does not establish a stable point-prediction improvement from hard age partitioning.
+Hard-age OLS minus pooled OLS was **+0.0041689353**, with participant-bootstrap 95% CI **[−0.0026392765, +0.0122600322]**.
 
 ## Primary uncertainty finding
 
@@ -40,16 +40,16 @@ At nominal 90% coverage:
 | Global residual | 0.962162 | 0.892836 | 0.856228 |
 | Age-Mondrian | 0.912012 | 0.903734 | 0.893594 |
 
-Age-Mondrian calibration reduced the observed age-group coverage imbalance. This is not a guarantee of nominal coverage in every subgroup or for every individual.
+Age-Mondrian calibration reduced the observed between-age coverage imbalance. This is an empirical subgroup result, not a guarantee of nominal coverage for every subgroup or individual.
 
-## Temporal transport
+## Temporal evaluation hierarchy
 
-The primary temporal evaluations used frozen source models and calibration, with no target retraining or target recalibration.
+The **2021–2023 NHANES cycle is the forward temporal evaluation**. The **2015–2016 cycle is a secondary adjacent-cycle stress test**. Both use frozen source models/calibration, without target retraining or target recalibration.
 
-| NHANES target cycle | N | RMSE | Calibration slope |
-|---|---:|---:|---:|
-| 2015–2016 | 2,235 | 0.6579939892 | 1.0421080503 |
-| August 2021–August 2023 | 2,808 | 0.5676959498 | 1.0472880843 |
+| NHANES target cycle | Role | N | RMSE | Calibration slope |
+|---|---|---:|---:|---:|
+| 2015–2016 | Secondary adjacent-cycle stress test | 2,235 | 0.6579939892 | 1.0421080503 |
+| August 2021–August 2023 | Forward temporal evaluation | 2,808 | 0.5676959498 | 1.0472880843 |
 
 These are independent cross-sectional samples within NHANES, not longitudinal follow-up and not validation in an independent health system.
 
@@ -66,30 +66,11 @@ The historical ANFIS record contains 3 Sugeno FIS models, 41 rules, and 533 prem
 
 See [`docs/CLAIM_BOUNDARIES.md`](docs/CLAIM_BOUNDARIES.md) for the complete inference boundary.
 
-## Reproducibility status
-
-The final machine-readable scientific check summary is [`verification/scientific_checks_final.json`](verification/scientific_checks_final.json). The detailed initial stop report is retained separately for audit history; its only failed comparison has been adjudicated rather than silently widening a global tolerance.
-
-The scientific QA establishes:
-
-- source identity and cohort closure;
-- repeated-OOF RMSE and paired contrasts;
-- exact 10,000-resample participant bootstrap replay;
-- frozen global and age-Mondrian conformal quantiles;
-- internal coverage/interval-score arithmetic;
-- backward and forward temporal counts and metrics;
-- exact forward TG bridge replay;
-- recovered original CQR stored-output arithmetic;
-- frozen-object hash identity;
-- legacy ANFIS structural replay.
-
-It **does not claim a fresh end-to-end retraining of every model family from raw CDC files**.
-
 ## Public data and repository policy
 
-Raw NHANES XPT files and participant-level analytic tables are not redistributed here. [`data/README.md`](data/README.md) records exact official CDC component URLs, retrieval dates, SHA-256 values, variables, and assay roles so the public source can be retrieved independently.
+Raw NHANES XPT files, participant-level analytic tables, and participant-level predictions are not redistributed here. [`data/README.md`](data/README.md) records official CDC component URLs, retrieval dates, SHA-256 values, variables, assay roles, and retrieval instructions so the public source can be obtained independently.
 
-The repository intentionally excludes literature/publisher PDFs, journal correspondence, private conversations, manuscripts, private contact files, participant-level derived tables, and internal project-transfer archives.
+The repository intentionally excludes literature/publisher PDFs, journal correspondence, private conversations, manuscript files, private contact files, participant-level derived tables, and internal project-transfer archives.
 
 ## Licensing
 
@@ -97,32 +78,25 @@ The repository intentionally excludes literature/publisher PDFs, journal corresp
 - Original documentation, original figures, and original aggregate derived materials whose rights the applicable rightsholder can grant are released under **CC BY 4.0**; see [`CONTENT_LICENSE.md`](CONTENT_LICENSE.md).
 - Third-party material retains its own terms and is not relicensed by this repository.
 
-The approved mapping is recorded in [`docs/LICENSE_DECISION.md`](docs/LICENSE_DECISION.md).
-
-## Repository checks
-
-Current repository-integrity checks use only the Python standard library:
-
-```sh
-python scripts/verify_manifest.py
-python scripts/check_public_content.py
-python scripts/check_verification_report.py
-python scripts/check_final_scientific_summary.py
-python scripts/scan_git_history.py
-```
-
-Scientific-analysis environment information is documented separately in [`docs/ENVIRONMENT.md`](docs/ENVIRONMENT.md) and `requirements-analysis.txt`.
-
 ## Associated manuscript
 
 **Age-Aware Reliability of HbA1c Prediction Across NHANES Cycles: Leakage-Free Evaluation, Conformal Calibration, and Temporal Transport**
 
-Authors, in the locked manuscript order: Hussein AlWedyan; Abdulwehab Ibrahim; Ashraf Shalafeh; Puteri Fahsyar; Mohanad Alata; Mazin Abuharaz; Mohammad AlWidian.
+Current manuscript author order:
+1. Hussein AlWedyan
+2. Ghassan Malkawi
+3. Ahmed Abdelaziz Elsayed
+4. Abdulwehab Ibrahim
+5. Ashraf Shalafeh
+6. Mohanad Alata
+7. Mohammad AlWidian
 
-**Repository/archive creator: Ghassan Malkawi. Associated-manuscript authorship is separate and unchanged.**
+**Repository/archive creator: Ghassan Malkawi. Repository/archive creation and associated-manuscript authorship are separate roles.**
 
-There is no final article DOI yet. Repository citation metadata are in [`CITATION.cff`](CITATION.cff); no manuscript DOI or ORCID has been invented.
+## Archival record
 
-## Release
+- GitHub release: **v1.0.1**
+- Zenodo version DOI: **10.5281/zenodo.22737921**
+- DOI link: https://doi.org/10.5281/zenodo.22737921
 
-Version: **v1.0.1**. See [`RELEASE_NOTES_v1.0.1.md`](RELEASE_NOTES_v1.0.1.md) for the archival patch scope. Repository citation metadata are maintained in `CITATION.cff`; the Zenodo DOI is added after archival verification.
+Repository citation metadata are maintained in [`CITATION.cff`](CITATION.cff).
