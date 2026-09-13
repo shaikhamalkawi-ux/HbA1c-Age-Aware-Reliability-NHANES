@@ -1,185 +1,129 @@
 {
-  "schema_version": 1,
-  "checkpoint": "repository_skeleton",
-  "overall_status": "HOLD",
-  "scope": "Scientific checks only. Package integrity and metadata validation are reported separately.",
+  "schema_version": 2,
+  "checkpoint": "scientific_qa",
+  "overall_status": "PASS",
+  "release_gate": "HOLD_LICENSE_AND_RELEASE",
   "stop_on_discrepancy": true,
+  "locked_science_changed": false,
+  "full_primary_training_refit_performed": false,
+  "raw_cdc_source_rejoin_performed": false,
+  "scope_note": "This checkpoint independently verifies locked archived inputs/outputs and deterministically recomputes the registered metrics. It does not claim a fresh end-to-end refit of all learner families from raw CDC XPT files.",
+  "summary": {"check_families": 16, "pass": 16, "hold": 0, "fail": 0},
   "checks": [
     {
       "id": "reconstructed_cohort",
-      "description": "Reconstructed cohort and exact-match counts",
-      "status": "NOT_RUN",
-      "executed": false,
-      "observed": null,
-      "command": null,
-      "input_hashes": [],
-      "required_evidence": "Original matching implementation, source files, and six-field row mapping",
-      "reason": "Original evidence intake and checkpoint-one feedback are pending."
+      "status": "PASS",
+      "executed": true,
+      "verification_mode": "Archived source-mapping/certificate verification; raw CDC J-cycle re-join not repeated.",
+      "observed": {"legacy_rows": 2325, "unique_seqn": 2325, "unique_six_field_fingerprints": 2325, "exact_matches": 2325, "ambiguous": 0, "unmatched": 0, "official_source_duplicate_fingerprints": 0}
     },
     {
       "id": "corrected_cohort",
-      "description": "Corrected primary fasting cohort N=2,219",
-      "status": "NOT_RUN",
-      "executed": false,
-      "observed": null,
-      "command": null,
-      "input_hashes": [],
-      "required_evidence": "Original cohort table and eligibility implementation",
-      "reason": "Original evidence intake and checkpoint-one feedback are pending."
+      "status": "PASS",
+      "executed": true,
+      "verification_mode": "Direct recomputation from locked cohort and attrition artifacts.",
+      "observed": {"n": 2219, "seqn_unique": true, "positive_fasting_weights": true, "fasting_minutes_min": 480.0, "fasting_minutes_max": 1439.0, "missing_ldl_rows": 25, "all_missing_ldl_tg_ge_400": true}
     },
     {
       "id": "age_group_counts",
-      "description": "Age-group counts 666 / 991 / 562",
-      "status": "NOT_RUN",
-      "executed": false,
-      "observed": null,
-      "command": null,
-      "input_hashes": [],
-      "required_evidence": "Corrected participant table and age coding",
-      "reason": "Original evidence intake and checkpoint-one feedback are pending."
+      "status": "PASS",
+      "executed": true,
+      "verification_mode": "Direct recomputation from the corrected cohort.",
+      "observed": {"20-39": 666, "40-64": 991, "65+": 562}
     },
     {
       "id": "point_model_rmse",
-      "description": "Point-model RMSE values",
-      "status": "NOT_RUN",
-      "executed": false,
-      "observed": null,
-      "command": null,
-      "input_hashes": [],
-      "required_evidence": "Original participant-level stored OOF predictions",
-      "reason": "Original evidence intake and checkpoint-one feedback are pending."
+      "status": "PASS",
+      "executed": true,
+      "verification_mode": "Direct recomputation from 66,570 stored repeated-OOF prediction rows; each participant has five test appearances per model.",
+      "observed": {"pooled_ols": 0.5732523421784678, "hard_age_ols": 0.5774212774999247, "glucose_only_ols": 0.5862355212293419, "smoothvc_ols": 0.591183742180368, "pooled_lightgbm": 0.5937450777180617, "hard_age_lightgbm": 0.6601329855676891},
+      "max_abs_difference_vs_archived": 0.0
     },
     {
       "id": "paired_contrasts",
-      "description": "Paired RMSE contrasts",
-      "status": "NOT_RUN",
-      "executed": false,
-      "observed": null,
-      "command": null,
-      "input_hashes": [],
-      "required_evidence": "Paired OOF predictions with participant and repeat identity",
-      "reason": "Original evidence intake and checkpoint-one feedback are pending."
+      "status": "PASS",
+      "executed": true,
+      "verification_mode": "Direct recomputation from stored repeated-OOF predictions.",
+      "observed": {"hard_age_ols_minus_pooled_ols": 0.004168935321456901, "hard_age_lightgbm_minus_pooled_lightgbm": 0.06638790784962734, "smoothvc_minus_pooled_ols": 0.017931400001900077, "pooled_lightgbm_minus_pooled_ols": 0.020492735539593965, "pooled_ols_minus_glucose_only": -0.012983179050874094}
     },
     {
       "id": "bootstrap_ci",
-      "description": "Participant bootstrap confidence intervals",
-      "status": "NOT_RUN",
-      "executed": false,
-      "observed": null,
-      "command": null,
-      "input_hashes": [],
-      "required_evidence": "Original bootstrap method, seed/resampling provenance, and paired predictions",
-      "reason": "Original evidence intake and checkpoint-one feedback are pending."
+      "status": "PASS",
+      "executed": true,
+      "verification_mode": "Exact 10,000-resample participant-level bootstrap rerun from stored predictions with seed 20260912.",
+      "observed": {"hard_age_ols_minus_pooled_ols_ci95": [-0.0026392764511016576, 0.012260032153039797]},
+      "max_abs_difference_vs_archived": 0.0
     },
     {
       "id": "global_q",
-      "description": "Global conformal q-values",
-      "status": "NOT_RUN",
-      "executed": false,
-      "observed": null,
-      "command": null,
-      "input_hashes": [],
-      "required_evidence": "Calibration-only residuals, split ledger, and quantile convention",
-      "reason": "Original evidence intake and checkpoint-one feedback are pending."
+      "status": "PASS",
+      "executed": true,
+      "verification_mode": "Fresh recomputation of deterministic 1,775/444 source split, pooled OLS residuals, and finite-sample order-statistic quantiles.",
+      "observed": {"q90": 0.8070130279745653, "q95": 1.1398926919235173}
     },
     {
       "id": "mondrian_q",
-      "description": "Age-Mondrian q-values",
-      "status": "NOT_RUN",
-      "executed": false,
-      "observed": null,
-      "command": null,
-      "input_hashes": [],
-      "required_evidence": "Group calibration residuals and exact quantile convention",
-      "reason": "Original evidence intake and checkpoint-one feedback are pending."
+      "status": "PASS",
+      "executed": true,
+      "verification_mode": "Fresh recomputation of age-Mondrian source-calibration quantiles.",
+      "observed": {"20-39_q90": 0.6394855277780342, "40-64_q90": 0.7539988977539949, "65plus_q90": 1.0327313959681845, "20-39_q95": 0.919630883391906, "40-64_q95": 1.231843406783268, "65plus_q95": 2.1898158949662268}
     },
     {
       "id": "age_coverage",
-      "description": "Coverage by age",
-      "status": "NOT_RUN",
-      "executed": false,
-      "observed": null,
-      "command": null,
-      "input_hashes": [],
-      "required_evidence": "Original interval endpoints and evaluation membership",
-      "reason": "Original evidence intake and checkpoint-one feedback are pending."
+      "status": "PASS",
+      "executed": true,
+      "verification_mode": "Direct recomputation from stored interval endpoints and outcomes.",
+      "observed": {"global_90": [0.9621621621621622, 0.8928355196770938, 0.8562277580071175], "mondrian_90": [0.912012012012012, 0.9037336024217961, 0.893594306049822]}
     },
     {
       "id": "interval_metrics",
-      "description": "Interval widths and scores",
-      "status": "NOT_RUN",
-      "executed": false,
-      "observed": null,
-      "command": null,
-      "input_hashes": [],
-      "required_evidence": "Original interval endpoints, outcomes, and scoring definitions",
-      "reason": "Original evidence intake and checkpoint-one feedback are pending."
+      "status": "PASS",
+      "executed": true,
+      "verification_mode": "Direct recomputation of overall 90% coverage, width, and interval score from stored interval endpoints.",
+      "observed": {"global_interval_score": 2.68707924518505, "mondrian_interval_score": 2.6385159688983326}
     },
     {
       "id": "temporal_counts",
-      "description": "Temporal target counts",
-      "status": "NOT_RUN",
-      "executed": false,
-      "observed": null,
-      "command": null,
-      "input_hashes": [],
-      "required_evidence": "Official target components and original cohort logic",
-      "reason": "Original evidence intake and checkpoint-one feedback are pending."
+      "status": "PASS",
+      "executed": true,
+      "verification_mode": "Direct recomputation from stored frozen target prediction tables.",
+      "observed": {"2015-2016_n": 2235, "2015-2016_age_counts": [712, 970, 553], "2021-2023_n": 2808, "2021-2023_age_counts": [670, 1203, 935]}
     },
     {
       "id": "temporal_metrics",
-      "description": "Temporal RMSE / MAE / R-squared / bias / calibration",
-      "status": "NOT_RUN",
-      "executed": false,
-      "observed": null,
-      "command": null,
-      "input_hashes": [],
-      "required_evidence": "Original target predictions, outcomes, and metric definitions",
-      "reason": "Original evidence intake and checkpoint-one feedback are pending."
+      "status": "PASS",
+      "executed": true,
+      "verification_mode": "Direct recomputation from stored frozen target predictions and outcomes.",
+      "observed": {"2015-2016_rmse": 0.6579939891772845, "2015-2016_calibration_slope": 1.0421080502582822, "2021-2023_rmse": 0.567695949765773, "2021-2023_calibration_slope": 1.047288084302036}
     },
     {
       "id": "tg_bridge",
-      "description": "TG bridge",
-      "status": "NOT_RUN",
-      "executed": false,
-      "observed": null,
-      "command": null,
-      "input_hashes": [],
-      "required_evidence": "Original bridge implementation, assay ledger, and official documentation",
-      "reason": "Original evidence intake and checkpoint-one feedback are pending."
+      "status": "PASS",
+      "executed": true,
+      "verification_mode": "Direct formula replay against stored raw and bridged 2021-2023 triglycerides.",
+      "observed": {"formula": "TG_old = -12.19 + 0.9785 * TG_new", "max_abs_difference_mg_dl": 0.0}
     },
     {
       "id": "original_cqr",
-      "description": "Recovered original CQR stored outputs",
-      "status": "NOT_RUN",
-      "executed": false,
-      "observed": null,
-      "command": null,
-      "input_hashes": [],
-      "required_evidence": "Original stored CQR outputs with provenance distinct from later exploratory objects",
-      "reason": "Original evidence intake and checkpoint-one feedback are pending."
+      "status": "PASS",
+      "executed": true,
+      "verification_mode": "Direct recomputation from recovered original CQR stored interval endpoints; no full learner refit claimed.",
+      "observed": {"internal_90_interval_score": 2.413035, "forward_90_interval_score": 2.283125236132289},
+      "max_abs_difference_vs_archived": 4.440892098500626e-16
     },
     {
       "id": "frozen_hashes",
-      "description": "Frozen model and calibration hashes",
-      "status": "NOT_RUN",
-      "executed": false,
-      "observed": null,
-      "command": null,
-      "input_hashes": [],
-      "required_evidence": "Original frozen objects and authoritative hash manifest",
-      "reason": "Original evidence intake and checkpoint-one feedback are pending."
+      "status": "PASS",
+      "executed": true,
+      "verification_mode": "SHA-256 verification of original frozen source model/calibration JSON and source-role ledger.",
+      "observed": {"freeze_json_sha256": "980333416af8db7132897b41c9ee024a0d8a3eb6ec5dfcd639ea3440a8b69f90", "source_role_ledger_sha256": "e027e808fdef242e1e9784729bcf8259a9c6a9ee76963fb5916498d9d4ed95c9"}
     },
     {
       "id": "anfis_parameters",
-      "description": "Historical ANFIS FIS parameter verification",
-      "status": "NOT_RUN",
-      "executed": false,
-      "observed": null,
-      "command": null,
-      "input_hashes": [],
-      "required_evidence": "Original three FIS files, parameter tables, and original verification code",
-      "reason": "Original evidence intake and checkpoint-one feedback are pending."
+      "status": "PASS",
+      "executed": true,
+      "verification_mode": "Re-execution of locked legacy evidence checks.",
+      "observed": {"sugeno_fis_models": 3, "rules": 41, "parameters_checked": 533, "parameter_matches_at_6dp": 533, "legacy_rows_evaluated": 2325, "max_fis_vs_matlab_prediction_difference": 1.4690471061840071e-12}
     }
   ]
 }
