@@ -1,10 +1,6 @@
 {
   "status": "EXPECTED_REFERENCE_ONLY_NOT_REPRODUCED",
-  "age_group_order": [
-    "20-39",
-    "40-64",
-    "65+"
-  ],
+  "age_group_order": ["20-39", "40-64", "65+"],
   "legacy": {
     "n": 2325,
     "exact_unique_matches": 2325,
@@ -12,16 +8,13 @@
     "unmatched": 0,
     "historical_before_ldl_restriction": 2350,
     "missing_friedewald_ldl": 25,
-    "all_missing_ldl_tg_ge_mg_dl": 400
+    "tg_friedewald_threshold_mg_dl": 400,
+    "all_25_missing_ldl_records_at_or_above_threshold": true
   },
   "source": {
     "cycle": "2017-2018",
     "n": 2219,
-    "age_group_counts": [
-      666,
-      991,
-      562
-    ]
+    "age_group_counts": [666, 991, 562]
   },
   "repeated_oof": {
     "folds": 5,
@@ -36,36 +29,17 @@
     },
     "hard_age_ols_minus_pooled_ols": {
       "difference": 0.004169,
-      "participant_bootstrap_ci_95": [
-        -0.002639,
-        0.01226
-      ]
+      "participant_bootstrap_ci_95": [-0.002639, 0.01226]
     }
   },
   "primary_coverage": {
     "nominal": 0.9,
-    "global_residual_by_age": [
-      0.962162,
-      0.892836,
-      0.856228
-    ],
-    "age_mondrian_by_age": [
-      0.912012,
-      0.903734,
-      0.893594
-    ]
+    "global_residual_by_age": [0.962162, 0.892836, 0.856228],
+    "age_mondrian_by_age": [0.912012, 0.903734, 0.893594]
   },
   "temporal": {
-    "2015-2016": {
-      "n": 2235,
-      "rmse": 0.657994,
-      "calibration_slope": 1.042108
-    },
-    "2021-2023": {
-      "n": 2808,
-      "rmse": 0.567696,
-      "calibration_slope": 1.047288
-    },
+    "2015-2016": {"n": 2235, "rmse": 0.657994, "calibration_slope": 1.042108},
+    "2021-2023": {"n": 2808, "rmse": 0.567696, "calibration_slope": 1.047288},
     "target_retraining": false,
     "target_recalibration": false
   },
