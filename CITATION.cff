@@ -4,10 +4,11 @@ type: software
 repository-code: "https://github.com/shaikhamalkawi-ux/HbA1c-Age-Aware-Reliability-NHANES"
 title: "Age-aware HbA1c reliability across NHANES cycles: reproducibility materials"
 version: "1.0.0"
+license: "MIT"
 authors:
   - family-names: "Malkawi"
     given-names: "Ghassan"
-abstract: "Public-safe reproducibility materials for age-aware HbA1c reliability evaluation across NHANES cycles, including source-reconstruction certificates, aggregate repeated out-of-fold and conformal metrics, temporal-transport verification, recovered secondary CQR output checks, and historical ANFIS structural verification. Participant-level NHANES data are not redistributed."
+abstract: "Public-safe reproducibility materials for age-aware HbA1c reliability evaluation across NHANES cycles, including source-reconstruction certificates, aggregate repeated out-of-fold and conformal metrics, temporal-transport verification, recovered secondary CQR output checks, and historical ANFIS structural verification. Participant-level NHANES data are not redistributed. Original code is released under MIT; original documentation, figures, and aggregate derived materials are released under CC BY 4.0 where the applicable rightsholder has authority to grant that license."
 keywords:
   - HbA1c
   - NHANES
