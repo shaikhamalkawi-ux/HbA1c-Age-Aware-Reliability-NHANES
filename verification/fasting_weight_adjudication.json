@@ -1,0 +1,31 @@
+{
+  "issue": "WTSAF2YR equality check between archived reconstruction CSV and freshly retrieved official GLU_J.xpt",
+  "initial_status": "FAIL_AT_ABSOLUTE_TOLERANCE_1E-8",
+  "final_status": "PASS_AS_REPRESENTATION_ROUNDING_WITH_NO_ELIGIBILITY_EFFECT",
+  "locked_science_changed": false,
+  "observed_max_abs_difference": 0.00005000003147870302,
+  "archived_reconstruction": {
+    "rows": 2325,
+    "zero_weights": 131,
+    "minimum_positive_weight": 9133.518063,
+    "maximum_weight": 944153.2498,
+    "maximum_weight_seqn": 98904
+  },
+  "official_cdc_codebook": {
+    "url": "https://wwwn.cdc.gov/Nchs/Data/Nhanes/Public/2017/DataFiles/GLU_J.htm",
+    "variable": "WTSAF2YR",
+    "published_positive_range_min": 9133.518063,
+    "published_positive_range_max": 944153.24975,
+    "published_zero_count_full_fasting_file": 325,
+    "note": "CDC documents WTSAF2YR=0 for no lab result or failure to meet the 8 to <24 hour fasting criterion."
+  },
+  "adjudication": {
+    "max_value_rounding_difference": 0.00005,
+    "matches_stop_triggering_difference": true,
+    "maximum_relative_difference_using_minimum_positive_weight": 5.474345277889557e-09,
+    "can_change_zero_vs_positive_classification": false,
+    "reason": "The largest archived value 944153.2498 is the decimal-rounded representation of the CDC-published maximum 944153.24975. The observed 5e-5 difference is therefore representational, not a participant/source mismatch. Because every positive official fasting weight is at least 9133.518063, an absolute perturbation of 5e-5 cannot cross zero or change the fasting-weight eligibility gate.",
+    "source_identity_checks": "All 2,325 retained records still match exactly and uniquely on age, BMI, fasting glucose, triglycerides, HbA1c, and Friedewald LDL, with zero ambiguous or unmatched rows."
+  },
+  "decision": "Do not widen scientific tolerances generally. Treat WTSAF2YR exact-decimal equality as a representation check and preserve exact equality requirements for identifiers, source fingerprints, counts, and scientific outcomes."
+}
