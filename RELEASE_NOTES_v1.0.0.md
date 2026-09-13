@@ -26,6 +26,12 @@ The release includes public-safe aggregate verification outputs for:
 
 No fresh end-to-end retraining of every learner family from raw CDC files is claimed.
 
+## Licensing
+
+- Original code whose rights the author can grant: **MIT License** (`LICENSE`).
+- Original documentation, original figures, and original aggregate derived materials whose rights the applicable rightsholder can grant: **CC BY 4.0** (`CONTENT_LICENSE.md`).
+- Third-party components/materials retain their own terms and are not relicensed.
+
 ## Public-data policy
 
 Raw NHANES XPT files and participant-level analytic tables are not redistributed. Exact official CDC component URLs, retrieval dates, hashes, variables, assay roles, and retrieval instructions are provided in `data/README.md` and `verification/data_provenance.json`.
@@ -46,12 +52,11 @@ Raw NHANES XPT files and participant-level analytic tables are not redistributed
 - publisher/literature PDFs and other third-party copyrighted materials;
 - credentials and private contact files.
 
-## Release blockers before publication
+## Remaining blockers before publication
 
-1. Author approval of the final license mapping.
-2. Git-history privacy cleanup for the documented historical contact-metadata finding.
-3. Final public-release QA after the cleaned history is in place.
-4. GitHub release creation and Zenodo ingestion/DOI verification.
+1. Git-history privacy cleanup for the documented historical contact-metadata finding.
+2. Final public-release QA after the cleaned history is in place.
+3. GitHub release creation and Zenodo ingestion/DOI verification.
 
 Repository/archive creator: **Ghassan Malkawi**.
 
