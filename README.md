@@ -12,7 +12,7 @@ This repository makes the locked study's source reconstruction, leakage-free eva
 
 The historical analysis used a table of 2,325 adults whose official source and eligibility required reconstruction. All 2,325 rows were linked uniquely to NHANES 2017–2018 using exact agreement at the stored precision on age, BMI, fasting glucose, triglycerides, HbA1c, and Friedewald LDL: **2,325 exact unique matches, 0 ambiguous, 0 unmatched**.
 
-The historical reduction from 2,350 to 2,325 is explained by 25 missing Friedewald-LDL values; all 25 had triglycerides at least 400 mg/dL. LDL completeness is not required by the four-input HbA1c prediction question.
+The historical reduction from 2,350 to 2,325 is explained by 25 missing Friedewald-LDL values; all 25 had triglycerides greater than 400 mg/dL. LDL completeness is not required by the four-input HbA1c prediction question.
 
 The corrected development cohort removes the LDL-completeness requirement and applies the locked fasting eligibility. It contains **2,219 adults**, with **666 / 991 / 562** in the age groups **20–39 / 40–64 / 65+**.
 
