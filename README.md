@@ -6,7 +6,7 @@ This repository makes the locked study's source reconstruction, leakage-free eva
 
 > **Age did not consistently justify separate point-prediction models, but it mattered more strongly for predictive reliability/calibration.**
 
-**Scientific QA is closed PASS: 16/16 registered check families PASS.** The earlier `WTSAF2YR` stop was adjudicated as a decimal-representation difference that cannot alter the zero-versus-positive fasting eligibility gate; the exact evidence is recorded in [`verification/fasting_weight_adjudication.json`](verification/fasting_weight_adjudication.json). The **v1.0.0** production materials have passed the license, public-content, manifest, reporting, and reachable-history checks. See [the public-safety review](docs/PUBLIC_SAFETY.md).
+**Scientific QA is closed PASS: 16/16 registered check families PASS.** The earlier `WTSAF2YR` stop was adjudicated as a decimal-representation difference that cannot alter the zero-versus-positive fasting eligibility gate; the exact evidence is recorded in [`verification/fasting_weight_adjudication.json`](verification/fasting_weight_adjudication.json). The **v1.0.1** production materials have passed the license, public-content, manifest, reporting, and reachable-history checks. See [the public-safety review](docs/PUBLIC_SAFETY.md).
 
 ## What was audited and corrected?
 
@@ -125,4 +125,4 @@ There is no final article DOI yet. Repository citation metadata are in [`CITATIO
 
 ## Release
 
-Version: **v1.0.0**. See [`RELEASE_NOTES_v1.0.0.md`](RELEASE_NOTES_v1.0.0.md) for the release scope and exclusions. Repository citation metadata are maintained in `CITATION.cff`; the Zenodo DOI is added after archival verification.
+Version: **v1.0.1**. See [`RELEASE_NOTES_v1.0.1.md`](RELEASE_NOTES_v1.0.1.md) for the archival patch scope. Repository citation metadata are maintained in `CITATION.cff`; the Zenodo DOI is added after archival verification.
