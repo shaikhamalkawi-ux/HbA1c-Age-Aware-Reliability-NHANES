@@ -1,7 +1,8 @@
 cff-version: "1.2.0"
-message: "If you use these reproducibility materials, cite this repository/archive. The Zenodo DOI for v1.0.1 will be added after archival publication."
+message: "If you use these reproducibility materials, cite this repository/archive and the Zenodo record."
 type: software
 repository-code: "https://github.com/shaikhamalkawi-ux/HbA1c-Age-Aware-Reliability-NHANES"
+doi: "10.5281/zenodo.22737921"
 title: "Age-aware HbA1c reliability across NHANES cycles: reproducibility materials"
 version: "1.0.1"
 date-released: "2026-09-13"
@@ -9,7 +10,7 @@ license: "MIT"
 authors:
   - family-names: "Malkawi"
     given-names: "Ghassan"
-abstract: "Public-safe reproducibility materials for age-aware HbA1c reliability evaluation across NHANES cycles, including source-reconstruction certificates, aggregate repeated out-of-fold and conformal metrics, temporal-transport verification, recovered secondary CQR output checks, and historical ANFIS structural verification. Global residual and age-Mondrian conformal analyses are primary; recovered original CQR is secondary; later fixed-configuration CQR is post hoc exploratory only; historical ANFIS is a structural/reproducibility case only. Participant-level NHANES data are not redistributed. Original code is released under MIT; original documentation, figures, and aggregate derived materials are released under CC BY 4.0 where the applicable rightsholder has authority to grant that license."
+abstract: "Public reproducibility materials for age-aware HbA1c reliability evaluation across NHANES cycles, including source-reconstruction certificates, aggregate repeated out-of-fold and conformal metrics, temporal-transport verification, recovered secondary CQR output checks, and historical ANFIS structural verification. Global residual and age-Mondrian conformal analyses are primary; recovered original CQR is secondary; later fixed-configuration CQR is post hoc exploratory only; historical ANFIS is a structural/reproducibility case only. Participant-level NHANES data are not redistributed. Original code is released under MIT; original documentation, figures, and aggregate derived materials are released under CC BY 4.0 where the applicable rightsholder has authority to grant that license."
 keywords:
   - HbA1c
   - NHANES
