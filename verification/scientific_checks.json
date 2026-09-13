@@ -1,0 +1,185 @@
+{
+  "schema_version": 1,
+  "checkpoint": "repository_skeleton",
+  "overall_status": "HOLD",
+  "scope": "Scientific checks only. Package integrity and metadata validation are reported separately.",
+  "stop_on_discrepancy": true,
+  "checks": [
+    {
+      "id": "reconstructed_cohort",
+      "description": "Reconstructed cohort and exact-match counts",
+      "status": "NOT_RUN",
+      "executed": false,
+      "observed": null,
+      "command": null,
+      "input_hashes": [],
+      "required_evidence": "Original matching implementation, source files, and six-field row mapping",
+      "reason": "Original evidence intake and checkpoint-one feedback are pending."
+    },
+    {
+      "id": "corrected_cohort",
+      "description": "Corrected primary fasting cohort N=2,219",
+      "status": "NOT_RUN",
+      "executed": false,
+      "observed": null,
+      "command": null,
+      "input_hashes": [],
+      "required_evidence": "Original cohort table and eligibility implementation",
+      "reason": "Original evidence intake and checkpoint-one feedback are pending."
+    },
+    {
+      "id": "age_group_counts",
+      "description": "Age-group counts 666 / 991 / 562",
+      "status": "NOT_RUN",
+      "executed": false,
+      "observed": null,
+      "command": null,
+      "input_hashes": [],
+      "required_evidence": "Corrected participant table and age coding",
+      "reason": "Original evidence intake and checkpoint-one feedback are pending."
+    },
+    {
+      "id": "point_model_rmse",
+      "description": "Point-model RMSE values",
+      "status": "NOT_RUN",
+      "executed": false,
+      "observed": null,
+      "command": null,
+      "input_hashes": [],
+      "required_evidence": "Original participant-level stored OOF predictions",
+      "reason": "Original evidence intake and checkpoint-one feedback are pending."
+    },
+    {
+      "id": "paired_contrasts",
+      "description": "Paired RMSE contrasts",
+      "status": "NOT_RUN",
+      "executed": false,
+      "observed": null,
+      "command": null,
+      "input_hashes": [],
+      "required_evidence": "Paired OOF predictions with participant and repeat identity",
+      "reason": "Original evidence intake and checkpoint-one feedback are pending."
+    },
+    {
+      "id": "bootstrap_ci",
+      "description": "Participant bootstrap confidence intervals",
+      "status": "NOT_RUN",
+      "executed": false,
+      "observed": null,
+      "command": null,
+      "input_hashes": [],
+      "required_evidence": "Original bootstrap method, seed/resampling provenance, and paired predictions",
+      "reason": "Original evidence intake and checkpoint-one feedback are pending."
+    },
+    {
+      "id": "global_q",
+      "description": "Global conformal q-values",
+      "status": "NOT_RUN",
+      "executed": false,
+      "observed": null,
+      "command": null,
+      "input_hashes": [],
+      "required_evidence": "Calibration-only residuals, split ledger, and quantile convention",
+      "reason": "Original evidence intake and checkpoint-one feedback are pending."
+    },
+    {
+      "id": "mondrian_q",
+      "description": "Age-Mondrian q-values",
+      "status": "NOT_RUN",
+      "executed": false,
+      "observed": null,
+      "command": null,
+      "input_hashes": [],
+      "required_evidence": "Group calibration residuals and exact quantile convention",
+      "reason": "Original evidence intake and checkpoint-one feedback are pending."
+    },
+    {
+      "id": "age_coverage",
+      "description": "Coverage by age",
+      "status": "NOT_RUN",
+      "executed": false,
+      "observed": null,
+      "command": null,
+      "input_hashes": [],
+      "required_evidence": "Original interval endpoints and evaluation membership",
+      "reason": "Original evidence intake and checkpoint-one feedback are pending."
+    },
+    {
+      "id": "interval_metrics",
+      "description": "Interval widths and scores",
+      "status": "NOT_RUN",
+      "executed": false,
+      "observed": null,
+      "command": null,
+      "input_hashes": [],
+      "required_evidence": "Original interval endpoints, outcomes, and scoring definitions",
+      "reason": "Original evidence intake and checkpoint-one feedback are pending."
+    },
+    {
+      "id": "temporal_counts",
+      "description": "Temporal target counts",
+      "status": "NOT_RUN",
+      "executed": false,
+      "observed": null,
+      "command": null,
+      "input_hashes": [],
+      "required_evidence": "Official target components and original cohort logic",
+      "reason": "Original evidence intake and checkpoint-one feedback are pending."
+    },
+    {
+      "id": "temporal_metrics",
+      "description": "Temporal RMSE / MAE / R-squared / bias / calibration",
+      "status": "NOT_RUN",
+      "executed": false,
+      "observed": null,
+      "command": null,
+      "input_hashes": [],
+      "required_evidence": "Original target predictions, outcomes, and metric definitions",
+      "reason": "Original evidence intake and checkpoint-one feedback are pending."
+    },
+    {
+      "id": "tg_bridge",
+      "description": "TG bridge",
+      "status": "NOT_RUN",
+      "executed": false,
+      "observed": null,
+      "command": null,
+      "input_hashes": [],
+      "required_evidence": "Original bridge implementation, assay ledger, and official documentation",
+      "reason": "Original evidence intake and checkpoint-one feedback are pending."
+    },
+    {
+      "id": "original_cqr",
+      "description": "Recovered original CQR stored outputs",
+      "status": "NOT_RUN",
+      "executed": false,
+      "observed": null,
+      "command": null,
+      "input_hashes": [],
+      "required_evidence": "Original stored CQR outputs with provenance distinct from later exploratory objects",
+      "reason": "Original evidence intake and checkpoint-one feedback are pending."
+    },
+    {
+      "id": "frozen_hashes",
+      "description": "Frozen model and calibration hashes",
+      "status": "NOT_RUN",
+      "executed": false,
+      "observed": null,
+      "command": null,
+      "input_hashes": [],
+      "required_evidence": "Original frozen objects and authoritative hash manifest",
+      "reason": "Original evidence intake and checkpoint-one feedback are pending."
+    },
+    {
+      "id": "anfis_parameters",
+      "description": "Historical ANFIS FIS parameter verification",
+      "status": "NOT_RUN",
+      "executed": false,
+      "observed": null,
+      "command": null,
+      "input_hashes": [],
+      "required_evidence": "Original three FIS files, parameter tables, and original verification code",
+      "reason": "Original evidence intake and checkpoint-one feedback are pending."
+    }
+  ]
+}

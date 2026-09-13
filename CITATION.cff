@@ -1,0 +1,15 @@
+cff-version: "1.2.0"
+message: "If you use these reproducibility materials, cite this repository. The production release and DOI are pending."
+type: software
+repository-code: "https://github.com/shaikhamalkawi-ux/HbA1c-Age-Aware-Reliability-NHANES"
+title: "Age-aware HbA1c reliability across NHANES cycles: reproducibility materials"
+authors:
+  - family-names: "Malkawi"
+    given-names: "Ghassan"
+abstract: "Reproducibility materials for age-aware HbA1c reliability evaluation across NHANES cycles. This repository currently contains a review scaffold; numerical reproduction and the production release are pending."
+keywords:
+  - HbA1c
+  - NHANES
+  - reproducibility
+  - conformal prediction
+  - temporal transport
