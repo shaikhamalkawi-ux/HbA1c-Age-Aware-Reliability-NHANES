@@ -9,7 +9,8 @@ The release candidate publishes public-safe documentation, verification code, ex
 - `README.md`
 - `CITATION.cff`
 - `RELEASE_NOTES_v1.0.0.md`
-- `LICENSE_PENDING.md` until the author approves the production license mapping
+- `LICENSE` — MIT for original code where the author has authority to grant it
+- `CONTENT_LICENSE.md` — CC BY 4.0 for original documentation, original figures, and original aggregate derived materials where the applicable rightsholder has authority to grant it
 - `docs/CLAIM_BOUNDARIES.md`
 - `docs/REPRODUCIBILITY.md`
 - `docs/ENVIRONMENT.md`
@@ -58,10 +59,9 @@ The public repository is intended to expose enough aggregate evidence, code, sou
 
 ## Remaining production gates
 
-Before `v1.0.0`:
+The license gate is complete. Before `v1.0.0`:
 
-1. replace `LICENSE_PENDING.md` with author-approved license notices and a clear material-to-license mapping;
-2. update `CITATION.cff` with the approved license and verified release date;
-3. close the documented Git-history contact-metadata finding and rerun the all-history scan;
-4. regenerate the exact allowlist, manifest and public-content report for the final production commit;
-5. create the GitHub release and verify Zenodo ingestion/DOI metadata.
+1. close the documented Git-history contact-metadata finding and rerun the all-history scan;
+2. regenerate the exact allowlist, manifest and public-content report for the final production commit;
+3. add the verified release date to `CITATION.cff` at the time of the actual production release;
+4. create the GitHub release and verify Zenodo ingestion/DOI metadata.
