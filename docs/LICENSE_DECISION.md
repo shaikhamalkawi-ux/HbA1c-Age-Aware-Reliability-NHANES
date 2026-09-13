@@ -1,15 +1,17 @@
-# License decision awaiting author approval
+# License decision — approved for v1.0.0
 
-**HOLD. No license is adopted by this document.** Public repository visibility is not a license decision.
+The author approved the following license mapping for the public reproducibility release:
 
-The option requested for review is:
-
-| Material | Proposed license |
+| Material | Approved license |
 | --- | --- |
 | Original code whose rights the author can grant | MIT |
-| Original documentation, figures and aggregate derived materials whose rights the author can grant | CC BY 4.0 |
+| Original documentation, original figures, and original aggregate derived materials whose rights the applicable rightsholder can grant | CC BY 4.0 |
 | Third-party components or materials | Their existing terms; no relicensing is implied |
 
-MIT permits reuse subject to retaining its copyright and license notice. See the [MIT license description and text](https://choosealicense.com/licenses/mit/). CC BY 4.0 permits sharing and adaptation subject to attribution, a license link and marking changes; see the [official license deed](https://creativecommons.org/licenses/by/4.0/).
+The software license text is in [`../LICENSE`](../LICENSE). The content-license statement is in [`../CONTENT_LICENSE.md`](../CONTENT_LICENSE.md).
 
-Before production, the author must approve a license and the material-to-license mapping. Then add the approved license texts and verified rights notices, update `CITATION.cff`, and remove `LICENSE_PENDING.md` from the tagged snapshot. Do not infer copyright ownership from the sole repository creator field.
+This mapping applies only where the applicable rightsholder has authority to grant the stated license. Public repository visibility is not used as a substitute for a license grant, and third-party material remains governed by its own terms.
+
+`CITATION.cff` records MIT as the primary software license for the repository release. Documentation/content licensing is separately documented as CC BY 4.0.
+
+The license gate is **PASS**. Remaining production gates are Git-history privacy cleanup, final public-release QA, GitHub release creation, and Zenodo DOI verification.
