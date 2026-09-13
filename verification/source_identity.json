@@ -1,0 +1,9 @@
+{
+  "source_description": "Locked combined manuscript inspected locally; not redistributed",
+  "check": "SHA-256 identity against hash supplied with the source conversation",
+  "expected_sha256": "944994db601b802753f03390e476e0ab45074889b25035f0482b6a76d19d752d",
+  "observed_sha256": "944994db601b802753f03390e476e0ab45074889b25035f0482b6a76d19d752d",
+  "status": "PASS",
+  "executed": true,
+  "limitation": "Byte identity only. This does not verify any numerical calculation or the completeness of scientific source files."
+}

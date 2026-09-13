@@ -1,0 +1,38 @@
+{
+  "cff_schema_validation": {
+    "status": "PASS",
+    "executed": true,
+    "schema_version": "1.2.0",
+    "schema_url": "https://raw.githubusercontent.com/citation-file-format/citation-file-format/1.2.0/schema.json",
+    "schema_sha256": "0b8d22140da702d766df318dcff3a91af2f39521298dcf36d76315fd99cc169b"
+  },
+  "repository_author": {
+    "status": "PASS",
+    "executed": true,
+    "observed": [
+      "Ghassan Malkawi"
+    ],
+    "basis": "Latest explicit author instruction"
+  },
+  "draft_zenodo_creator_consistency": {
+    "status": "PASS",
+    "executed": true,
+    "observed": [
+      "Malkawi, Ghassan"
+    ],
+    "scope": "Local metadata draft only; no Zenodo record exists"
+  },
+  "orcid": {
+    "status": "OMITTED",
+    "reason": "No confirmed identifier supplied"
+  },
+  "license": {
+    "status": "HOLD",
+    "reason": "Author approval pending"
+  },
+  "production_release": {
+    "status": "HOLD",
+    "planned_tag": "v1.0.0"
+  },
+  "doi": null
+}
