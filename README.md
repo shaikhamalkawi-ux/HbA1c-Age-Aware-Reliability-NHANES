@@ -6,7 +6,7 @@ This repository makes the locked study's source reconstruction, leakage-free eva
 
 > **Age did not consistently justify separate point-prediction models, but it mattered more strongly for predictive reliability/calibration.**
 
-**Scientific QA is closed PASS: 16/16 registered check families PASS.** The earlier `WTSAF2YR` stop was adjudicated as a decimal-representation difference that cannot alter the zero-versus-positive fasting eligibility gate; the exact evidence is recorded in [`verification/fasting_weight_adjudication.json`](verification/fasting_weight_adjudication.json). This branch is the **v1.0.0 release candidate**. The license gate is now PASS. Production release and Zenodo remain on hold only for Git-history privacy cleanup and final public-release QA.
+**Scientific QA is closed PASS: 16/16 registered check families PASS.** The earlier `WTSAF2YR` stop was adjudicated as a decimal-representation difference that cannot alter the zero-versus-positive fasting eligibility gate; the exact evidence is recorded in [`verification/fasting_weight_adjudication.json`](verification/fasting_weight_adjudication.json). The **v1.0.0** production materials have passed the license, public-content, manifest, reporting, and reachable-history checks. See [the public-safety review](docs/PUBLIC_SAFETY.md).
 
 ## What was audited and corrected?
 
@@ -106,6 +106,9 @@ Current repository-integrity checks use only the Python standard library:
 ```sh
 python scripts/verify_manifest.py
 python scripts/check_public_content.py
+python scripts/check_verification_report.py
+python scripts/check_final_scientific_summary.py
+python scripts/scan_git_history.py
 ```
 
 Scientific-analysis environment information is documented separately in [`docs/ENVIRONMENT.md`](docs/ENVIRONMENT.md) and `requirements-analysis.txt`.
@@ -120,12 +123,6 @@ Authors, in the locked manuscript order: Hussein AlWedyan; Abdulwehab Ibrahim; A
 
 There is no final article DOI yet. Repository citation metadata are in [`CITATION.cff`](CITATION.cff); no manuscript DOI or ORCID has been invented.
 
-## Release candidate
+## Release
 
-Planned public release: **v1.0.0**. See [`RELEASE_NOTES_v1.0.0.md`](RELEASE_NOTES_v1.0.0.md) for the release scope and exclusions.
-
-Remaining release gates:
-
-1. Git-history privacy cleanup for the documented historical contact-metadata finding;
-2. final public-release integrity/safety checks after the cleaned history is in place;
-3. GitHub release creation followed by Zenodo ingestion and DOI verification.
+Version: **v1.0.0**. See [`RELEASE_NOTES_v1.0.0.md`](RELEASE_NOTES_v1.0.0.md) for the release scope and exclusions. Repository citation metadata are maintained in `CITATION.cff`; the Zenodo DOI is added after archival verification.

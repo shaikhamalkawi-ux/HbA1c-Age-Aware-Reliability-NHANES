@@ -16,7 +16,7 @@ python scripts/check_final_scientific_summary.py
 python scripts/scan_git_history.py
 ```
 
-The manifest/content/report checks validate public-package bookkeeping. `scan_git_history.py` is intentionally separate because the existing public Git history still contains a documented author/committer contact-metadata finding that must be resolved before `v1.0.0`.
+The manifest/content/report checks validate public-package bookkeeping. `scan_git_history.py` separately checks reachable commit trees and metadata. All five checks passed after the approved history cleanup; scientific inputs were not rerun.
 
 ## Independently replay the scientific QA
 
@@ -49,7 +49,7 @@ The repository exposes only public-safe aggregate verification artifacts, includ
 - `frozen_objects/frozen_temporal_ols_conformal_certificate.json`
 - `data/NHANES_Assay_Source_Ledger.csv`
 
-Raw NHANES XPT files, participant-level analytic cohorts, participant predictions, split ledgers, and private research archives are deliberately excluded from the public release candidate.
+Raw NHANES XPT files, participant-level analytic cohorts, participant predictions, split ledgers, and private research archives are deliberately excluded from the public release.
 
 ## Licensing
 
@@ -68,7 +68,7 @@ The original analytical record and the independent QA environment are documented
 1. Repository skeleton: complete.
 2. Numerical/scientific QA: **complete PASS**.
 3. License mapping: **complete PASS**.
-4. Public-history privacy cleanup and final safety rerun: pending.
+4. Public-history privacy cleanup and final safety rerun: **complete PASS**.
 5. GitHub `v1.0.0`: create only after the history/public-safety gate passes.
 6. Zenodo: archive the approved production release and verify DOI/metadata.
 

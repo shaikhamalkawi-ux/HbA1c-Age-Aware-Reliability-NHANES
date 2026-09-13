@@ -2,7 +2,7 @@
 
 ## Public scientific/reproducibility contents
 
-The release candidate publishes public-safe documentation, verification code, exact source identities, aggregate outputs, and frozen certificates. Participant-level material remains excluded.
+The release publishes public-safe documentation, verification code, exact source identities, aggregate outputs, and frozen certificates. Participant-level material remains excluded.
 
 ### Core documentation and metadata
 

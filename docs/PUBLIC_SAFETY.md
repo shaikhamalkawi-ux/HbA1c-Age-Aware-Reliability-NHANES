@@ -1,14 +1,14 @@
 # Public safety review
 
-**Current-tree gate: PASS. History-level gate: HOLD pending rewrite.**
+**Current-tree gate: PASS. Reachable-history gate: PASS.**
 
-The production-facing release-candidate tree passes the explicit public-content allowlist and lexical scan. It contains no raw NHANES XPTs, participant-level analytic tables, private research archives, manuscript files, journal correspondence, publisher PDFs, credentials, private contact files, or machine-specific paths.
+The production tree passes the explicit public-content allowlist and lexical scan. It contains no raw NHANES XPTs, participant-level analytic tables, private research archives, manuscript files, journal correspondence, publisher PDFs, credentials, private contact files, or machine-specific paths.
 
-The remaining privacy issue is historical only: earlier public commits contain a personal email address in commit author/committer metadata. The current branch uses GitHub noreply identities, but deleting a file or changing current metadata does not remove contact metadata already present in reachable Git history.
+Historical author/committer contact metadata was replaced by the approved GitHub noreply identity on all normal public branches. Three development-only notes were removed from the old QA branch with author authorization. Commit messages, names and timestamps were preserved, and all scientific files and production content remained unchanged.
 
-Before `v1.0.0`, rewrite the public Git history so the historical personal email is replaced by an approved noreply identity, force-update the relevant public refs, and rerun the all-history scan. Do not alter scientific file contents merely to rewrite commit metadata.
+A fresh clone passed all five required checks across the cleaned normal branches. The history scan covers fetched reachable refs; it does not establish removal from cached commits, pull-request refs or third-party clones.
 
-After the rewrite, verify all of the following on the final production commit:
+Verify all of the following on the final production commit:
 
 1. `python scripts/verify_manifest.py` passes;
 2. `python scripts/check_public_content.py` passes;

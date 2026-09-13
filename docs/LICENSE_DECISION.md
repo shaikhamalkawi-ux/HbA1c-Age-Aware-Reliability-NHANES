@@ -14,4 +14,4 @@ This mapping applies only where the applicable rightsholder has authority to gra
 
 `CITATION.cff` records MIT as the primary software license for the repository release. Documentation/content licensing is separately documented as CC BY 4.0.
 
-The license gate is **PASS**. Remaining production gates are Git-history privacy cleanup, final public-release QA, GitHub release creation, and Zenodo DOI verification.
+The license gate is **PASS**. The production package and reachable-history checks also pass; Zenodo metadata and the DOI are verified when the release is archived.

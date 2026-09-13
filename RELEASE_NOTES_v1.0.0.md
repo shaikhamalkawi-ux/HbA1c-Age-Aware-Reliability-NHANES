@@ -52,11 +52,9 @@ Raw NHANES XPT files and participant-level analytic tables are not redistributed
 - publisher/literature PDFs and other third-party copyrighted materials;
 - credentials and private contact files.
 
-## Remaining blockers before publication
+## Release integrity
 
-1. Git-history privacy cleanup for the documented historical contact-metadata finding.
-2. Final public-release QA after the cleaned history is in place.
-3. GitHub release creation and Zenodo ingestion/DOI verification.
+The five required package/report/history checks passed on a fresh clone after the approved contact-metadata cleanup and removal of three development-only notes from the old QA branch. The final scientific summary remains 16 PASS / 0 HOLD / 0 FAIL. These release checks do not rerun scientific analysis. Earlier review documents are retained as audit records; this section records the production release gate.
 
 Repository/archive creator: **Ghassan Malkawi**.
 
