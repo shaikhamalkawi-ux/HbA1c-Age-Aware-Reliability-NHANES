@@ -6,7 +6,7 @@ This repository makes the locked study's source reconstruction, leakage-free eva
 
 > **Age did not consistently justify separate point-prediction models, but it mattered more strongly for predictive reliability/calibration.**
 
-**Checkpoint 2 scientific QA: 16/16 check families PASS.** The original stop on a `WTSAF2YR` decimal-equality check was independently adjudicated as a representation/rounding difference that cannot alter the zero-versus-positive fasting eligibility gate; the exact evidence is recorded in [`verification/fasting_weight_adjudication.json`](verification/fasting_weight_adjudication.json). Production `v1.0.0` and Zenodo remain **HOLD** until the license decision and final public-release review are complete.
+**Scientific QA is closed PASS: 16/16 registered check families PASS.** The earlier `WTSAF2YR` stop was adjudicated as a decimal-representation difference that cannot alter the zero-versus-positive fasting eligibility gate; the exact evidence is recorded in [`verification/fasting_weight_adjudication.json`](verification/fasting_weight_adjudication.json). This branch is the **v1.0.0 release candidate**. Production release and Zenodo remain on hold only for author-approved licensing, Git-history privacy cleanup, and final public-release QA.
 
 ## What was audited and corrected?
 
@@ -112,6 +112,13 @@ Authors, in the locked manuscript order: Hussein AlWedyan; Abdulwehab Ibrahim; A
 
 There is no final article DOI yet. Repository citation metadata are in [`CITATION.cff`](CITATION.cff); no manuscript DOI or ORCID has been invented.
 
-## Release status
+## Release candidate
 
-No license has yet been approved. See [`docs/LICENSE_DECISION.md`](docs/LICENSE_DECISION.md) and [`LICENSE_PENDING.md`](LICENSE_PENDING.md). The planned first production release is **v1.0.0**. A GitHub production release and Zenodo DOI will be created only after license approval and the final public-release gate.
+Planned public release: **v1.0.0**. See [`RELEASE_NOTES_v1.0.0.md`](RELEASE_NOTES_v1.0.0.md) for the release scope and exclusions.
+
+Remaining release gates:
+
+1. author approval of the license mapping in [`docs/LICENSE_DECISION.md`](docs/LICENSE_DECISION.md);
+2. Git-history privacy cleanup for the documented historical contact-metadata finding;
+3. final public-release integrity/safety checks after the cleaned history is in place;
+4. GitHub release creation followed by Zenodo ingestion and DOI verification.
