@@ -1,5 +1,5 @@
-# Temporal validation intake
+# Temporal validation
 
-Pending: original frozen-evaluation code, target-cycle retrieval/eligibility logic, assay/source ledger, source-frozen model and calibration identity, stored target predictions, and aggregate metrics.
+Stored frozen temporal predictions and metric arithmetic passed. Fresh official target cohort reconstruction and the TG bridge check were stopped and remain HOLD.
 
-Targets are NHANES 2015–2016 (N=2,235) and August 2021–August 2023 (N=2,808). Primary evaluations must preserve the original no-target-retraining/no-target-recalibration design. Raw-TG sensitivities must remain separate from the prespecified forward bridge.
+See [scientific verification](../docs/SCIENTIFIC_VERIFICATION.md) and [input identities](../verification/evidence_inputs.json).

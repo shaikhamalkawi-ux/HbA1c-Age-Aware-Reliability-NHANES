@@ -1,0 +1,58 @@
+{
+  "status": "FAIL",
+  "scope": "All commits reachable from fetched local/remote refs and tags; all unique path/blob pairs, plus commit messages and contacts. This bounded lexical/type/allowlist review is not a proof that arbitrary secrets cannot exist.",
+  "head": "24ffce246c755d97ec6c19ba052c94e1f98d6d01",
+  "commits_scanned": 4,
+  "commit_shas": [
+    "24ffce246c755d97ec6c19ba052c94e1f98d6d01",
+    "6f78fbea3b440e284d7f4739d42f8feb4c1f151f",
+    "ab12ead1efce6cdbcf030dd75378d7b61017de16",
+    "7907b96049cf19c05bf1efb28512ebc0c83d6f7f"
+  ],
+  "unique_path_blob_pairs_scanned": 34,
+  "unique_paths": 29,
+  "findings": [
+    {
+      "commit": "24ffce246c755d97ec6c19ba052c94e1f98d6d01",
+      "path": "commit metadata",
+      "rule": "personal_author_contact",
+      "value_sha256": "98758e3804106fed51acd3979ebc2dab60afffce8d4d0156b88c4df50221df94"
+    },
+    {
+      "commit": "24ffce246c755d97ec6c19ba052c94e1f98d6d01",
+      "path": "commit metadata",
+      "rule": "personal_committer_contact",
+      "value_sha256": "98758e3804106fed51acd3979ebc2dab60afffce8d4d0156b88c4df50221df94"
+    },
+    {
+      "commit": "6f78fbea3b440e284d7f4739d42f8feb4c1f151f",
+      "path": "commit metadata",
+      "rule": "personal_author_contact",
+      "value_sha256": "98758e3804106fed51acd3979ebc2dab60afffce8d4d0156b88c4df50221df94"
+    },
+    {
+      "commit": "6f78fbea3b440e284d7f4739d42f8feb4c1f151f",
+      "path": "commit metadata",
+      "rule": "personal_committer_contact",
+      "value_sha256": "98758e3804106fed51acd3979ebc2dab60afffce8d4d0156b88c4df50221df94"
+    },
+    {
+      "commit": "ab12ead1efce6cdbcf030dd75378d7b61017de16",
+      "path": "commit metadata",
+      "rule": "personal_author_contact",
+      "value_sha256": "98758e3804106fed51acd3979ebc2dab60afffce8d4d0156b88c4df50221df94"
+    },
+    {
+      "commit": "ab12ead1efce6cdbcf030dd75378d7b61017de16",
+      "path": "commit metadata",
+      "rule": "personal_committer_contact",
+      "value_sha256": "98758e3804106fed51acd3979ebc2dab60afffce8d4d0156b88c4df50221df94"
+    },
+    {
+      "commit": "7907b96049cf19c05bf1efb28512ebc0c83d6f7f",
+      "path": "commit metadata",
+      "rule": "personal_author_contact",
+      "value_sha256": "98758e3804106fed51acd3979ebc2dab60afffce8d4d0156b88c4df50221df94"
+    }
+  ]
+}

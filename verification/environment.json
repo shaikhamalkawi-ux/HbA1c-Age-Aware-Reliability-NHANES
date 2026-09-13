@@ -1,0 +1,58 @@
+{
+  "status": "HOLD_FOR_COMPLETE_HISTORICAL_ENVIRONMENT",
+  "original_training": {
+    "python": "3.13.5 (main, Jul 15 2026, 20:25:40) [GCC 14.2.0]",
+    "platform": "Linux-6.18.35-x86_64-with-glibc2.41",
+    "numpy": "2.3.5",
+    "pandas": "2.2.3",
+    "sklearn": "1.8.0",
+    "lightgbm": "4.6.0"
+  },
+  "original_arithmetic_and_document_QA": {
+    "python": "3.13.5 (main, Jul 15 2026, 20:25:40) [GCC 14.2.0]",
+    "platform": "Linux-6.18.35-x86_64-with-glibc2.41",
+    "numpy": "2.3.5",
+    "pandas": "2.2.3",
+    "scipy": "1.17.0",
+    "matplotlib": "3.10.8",
+    "python_docx": "1.2.0"
+  },
+  "original_environment_input_hashes": [
+    {
+      "path": "original_environment.json",
+      "sha256": "43144f01c4a88a889b39249a1152e2c9176a4ef9346488d0560a64d2fff71773"
+    },
+    {
+      "path": "qa_environment.json",
+      "sha256": "cd1066e15abbe0fe2730062ea0f07f69710d8527b8445ff73c19d6c1024e4f10"
+    }
+  ],
+  "checkpoint_execution": {
+    "python": "3.12.14",
+    "implementation": "CPython",
+    "system": "Windows",
+    "machine": "AMD64",
+    "packages": {
+      "numpy": "2.3.5",
+      "pandas": "2.2.3",
+      "scipy": "1.17.0",
+      "python-dateutil": "2.9.0.post0",
+      "pytz": "2026.3.post1",
+      "six": "1.17.0",
+      "tzdata": "2026.4"
+    },
+    "training_refit": false
+  },
+  "missing_historical_versions": {
+    "statsmodels": {
+      "version": null,
+      "evidence": "No statsmodels import or version record found in the recovered Python scientific code/environment records. Not used in this checkpoint; historical absence cannot be proven."
+    },
+    "lxml": {
+      "version": null,
+      "evidence": "Recovered document requirements specify lxml>=5 without an exact version. Not used in scientific arithmetic in this checkpoint."
+    },
+    "transitive_dependencies": "Original transitive versions and full original pip freeze were not archived."
+  },
+  "limits": "Python 3.12.14/Windows was used for this arithmetic check; the original environment was Python 3.13.5/Linux. Known scientific arithmetic library versions match. requirements-analysis.txt pins the executed QA stack; it is not a claim to recreate the full training environment."
+}

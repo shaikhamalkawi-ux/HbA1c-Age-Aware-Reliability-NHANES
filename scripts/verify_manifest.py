@@ -1,6 +1,7 @@
 """Verify SHA-256 content and complete file coverage for this scaffold."""
 from pathlib import Path, PurePosixPath
 import hashlib
+import os
 import sys
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -8,14 +9,14 @@ IGNORED_DIRS = {".git", ".local", ".venv", "__pycache__"}
 
 
 def included_files():
-    return {
-        p.relative_to(ROOT).as_posix()
-        for p in ROOT.rglob("*")
-        if p.is_file()
-        and not any(part in IGNORED_DIRS for part in p.relative_to(ROOT).parts)
-        and p.name != "SHA256SUMS.txt"
-        and p.suffix not in {".pyc", ".pyo"}
-    }
+    result = set()
+    for folder, dirs, files in os.walk(ROOT):
+        dirs[:] = [d for d in dirs if d not in IGNORED_DIRS]
+        for name in files:
+            p = Path(folder) / name
+            if p.name != "SHA256SUMS.txt" and p.suffix not in {".pyc", ".pyo"}:
+                result.add(p.relative_to(ROOT).as_posix())
+    return result
 
 
 def main():

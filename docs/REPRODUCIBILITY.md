@@ -1,38 +1,45 @@
-# Reproducibility status
+# Reproducibility and replay
 
-This checkpoint establishes a reviewable repository structure. It does not establish successful reproduction of the study.
+Checkpoint 2 executed stored-output arithmetic and stopped at a reconstructed-table `WTSAF2YR` disagreement. Scientific family counts are **11 PASS / 4 HOLD / 1 FAIL**. See [the report](SCIENTIFIC_VERIFICATION.md). No training or recalibration was run.
 
-## Available now
+## Public package checks
 
-- The locked manuscript was available for local inspection; its byte-level identity was checked against the supplied reference hash. The manuscript itself is excluded from the repository.
-- Locked numerical targets are recorded in `verification/locked_reference.json` as expected values, not observed outputs.
-- Sixteen required scientific check families are registered in `verification/scientific_checks.json` with `NOT_RUN` status.
-- Repository integrity and text-content checks are executable with Python 3.9 or later and the standard library.
-- Citation metadata name Ghassan Malkawi as the sole repository/archive author, as instructed. Manuscript authorship is outside the scope of this metadata.
-
-## Commands supported at this checkpoint
+Python 3.9+ and the standard library:
 
 ```sh
 python scripts/verify_manifest.py
 python scripts/check_public_content.py
+python scripts/check_verification_report.py
+python scripts/scan_git_history.py
 ```
 
-Both commands exit nonzero if their stated checks fail. The content scanner is a bounded screening tool, not proof of ownership, licensing, or numerical correctness. Review the actual included files before each public update.
+The first three check package/report integrity, not scientific success. The history command returns nonzero for the documented existing contact metadata. CI runs these checks on pushes and tags. It does not pretend that private scientific inputs are present in a public runner.
 
-## Required before numerical reproduction
+## Independently replay the stopped scientific run
 
-Original source files, split ledgers, stored predictions, calibration outputs, temporal target records, assay ledgers, CQR provenance, frozen objects, and ANFIS files must be inspected and mapped to public paths. Older bundles are candidate sources only; their presence does not establish consistency with the locked study.
+This is a reproducibility instruction, not authorization to resume the study's pending scientific work. Use the exact privately held root archive whose identity is recorded in `verification/evidence_inputs.json`. The public repository does not distribute it.
 
-No scientific scripts are invented or substituted at this checkpoint. No retraining, retuning, new cycle, changed cohort rule, or new post hoc analysis is authorized by the package checks.
+```sh
+python -m venv .venv
+# Activate .venv using the normal command for your shell.
+python -m pip install -r requirements-analysis.txt
+python scripts/prepare_evidence.py --archive <locked-research-archive.zip> --output-dir .local/evidence
+python scripts/retrieve_nhanes.py --output-dir .local/evidence/nhanes --manifest .local/retrieved_components.json --verify-against verification/data_provenance.json
+python scripts/verify_science.py --evidence-root .local/evidence --output .local/replayed_scientific_checks.json
+```
 
-For each scientific check, record input paths and hashes, executed command, actual observed value, expected value, tolerance justified by the original representation, and outcome. Mark `PASS` only after execution. A missing file or an unexecuted calculation remains `NOT_RUN` or `HOLD`. A discrepancy must be reported exactly and stops scientific release work; expected values must never be written into observed output fields.
+The verifier recomputes from stored predictions first, then evaluates fixed objects and official-source identities. It contains no `.fit()` calls. The expected current outcome is a nonzero exit at the documented metadata discrepancy; later scientific checks stay HOLD. Never widen a tolerance or change a reference merely to obtain PASS.
+
+All actual scientific input paths are relative to the `--evidence-root` directory, and each has an exact SHA-256. Public aliases map to exact archive SHA/member paths. Missing files yield HOLD; an input hash mismatch or out-of-tolerance scientific comparison yields FAIL and stops subsequent families. The legacy six-column original table and full historical environment are missing provenance requirements; archived certificates alone do not recreate them.
+
+The published report adds planned-input and LF-normalization metadata to the stopped execution output without altering any measurement or status. `verification/execution_artifacts.json` records the executed/reference file identities. SHA256SUMS records the final repository bytes.
 
 ## Review gates
 
-1. Repository skeleton: independent review feedback required.
-2. Reproducibility QA: execute checks after source intake and skeleton feedback; independent review required.
-3. Public-release candidate: confirm content, metadata, license, and candidate commit; final feedback required.
-4. GitHub production release v1.0.0: record commit and release-asset hashes; review before Zenodo finalization.
-5. Zenodo: verify record, DOI, metadata, linkage, and final feedback.
+1. Skeleton: approved for numerical QA at commit `24ffce246c755d97ec6c19ba052c94e1f98d6d01`.
+2. Numerical QA: this stopped-run report requires independent feedback.
+3. Release candidate: resolve science, provenance, safety and license; review the candidate snapshot.
+4. GitHub v1.0.0: create only after explicit release approval, with final metadata and asset hashes.
+5. Zenodo: verify metadata, archive linkage and DOI only after its review gate.
 
-No gate is inferred from passage of time or from a successfully created repository. The first repository snapshot is not final approval.
+`CITATION.cff` remains the metadata authority. [Zenodo documents CFF support](https://help.zenodo.org/docs/github/describe-software/citation-file/) and gives `.zenodo.json` precedence when both exist; no second authority has been added.

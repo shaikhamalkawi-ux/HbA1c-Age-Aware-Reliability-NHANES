@@ -1,26 +1,34 @@
 # Included and excluded materials
 
-## Included at the skeleton checkpoint
+## Newly admitted in checkpoint 2
 
-- Scientific overview with explicitly labeled locked reference values.
-- Citation metadata for Ghassan Malkawi only.
-- A pending-license notice; no license has been selected.
-- Data access/eligibility notes and a semantic dictionary.
-- Intake requirements for each evidence layer.
-- A sixteen-family scientific verification register with no scientific PASS claims.
-- Standard-library package integrity and text-content checks.
-- A SHA-256 manifest of the included scaffold files.
-- A draft Zenodo metadata file that must not be submitted before the release gates close.
+- `.github/workflows/integrity.yml`
+- `requirements-analysis.txt`
+- `scripts/retrieve_nhanes.py`
+- `scripts/prepare_evidence.py`
+- `scripts/verify_science.py`
+- `scripts/fis_arithmetic.py`
+- `scripts/scan_git_history.py`
+- `scripts/check_verification_report.py`
+- `verification/evidence_inputs.json`
+- `verification/source_intake.json`
+- `verification/data_provenance.json`
+- `verification/environment.json`
+- `verification/history_safety_report.json`
+- `verification/execution_artifacts.json`
+- `verification/file_admission.json`
+- `docs/ENVIRONMENT.md`
+- `docs/SCIENTIFIC_VERIFICATION.md`
+- `docs/CHECKPOINT_2.md`
+- `docs/PUBLIC_SAFETY.md`
+- `docs/LICENSE_DECISION.md`
+
+Existing README, directory notes and verification references were updated. `CITATION.cff` retains Ghassan Malkawi alone. `verification/file_admission.json` is the explicit admission decision; the allowlist contains the complete snapshot inventory.
 
 ## Intentionally excluded
 
-- Manuscript PDFs and manuscript source packages.
-- Journal correspondence, reviewer packages, chat-transfer archives, internal conversations, and manuscript-version notes.
-- Literature/publisher PDFs and other unreviewed third-party material.
-- Private contact details, credentials, and machine-specific paths.
-- Raw NHANES component files and participant-level tables.
-- Duplicate files and unverified historical outputs.
+Raw CDC XPTs; participant-level cohorts, predictions, calibration/role tables and MAT arrays; complete/nested research archives; manuscripts and source; private contact details; original scripts with machine paths; correspondence and publisher PDFs. Original frozen model objects and figures remain deferred after the scientific stop. Only new read-only QA/retrieval code, safe exact input identities and aggregate audit measurements are admitted.
 
-## Pending admission after inspection
+## Future production snapshot cleanup
 
-Original scientific scripts, aggregate derived outputs, frozen model/calibration objects, source and assay ledgers, original CQR outputs, historical FIS files, and study figures. The directory README files describe the evidence needed. Their presence is not a claim that these artifacts have already been recovered or verified.
+Remove `docs/CHECKPOINT_1.md`, `docs/CHECKPOINT_2.md` and `docs/zenodo_metadata_draft.json` from the production tag. After approved licensing, replace `LICENSE_PENDING.md` with the approved notices. Complete scientific and history-safety review before tagging. Review notes can remain in history unless they contain a separately resolved privacy issue.

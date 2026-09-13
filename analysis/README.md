@@ -1,5 +1,5 @@
-# Point-model evaluation intake
+# Analysis
 
-Pending: original implementation/environment, 5-fold × 5-repeat split ledger, stored participant-level OOF predictions, paired bootstrap implementation and resampling provenance, aggregate metrics, and original configuration.
+Stored OOF metrics, paired contrasts and original participant bootstrap arithmetic passed. Original training was not rerun. See the scientific report and input map.
 
-No training or retuning script is included or executed. Reproduction should first recompute metrics from the original stored predictions and verify participant-level pairing. Expected summary values are in `verification/locked_reference.json`.
+See [scientific verification](../docs/SCIENTIFIC_VERIFICATION.md) and [input identities](../verification/evidence_inputs.json).
