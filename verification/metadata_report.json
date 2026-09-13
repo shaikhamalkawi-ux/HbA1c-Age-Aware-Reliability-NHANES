@@ -12,43 +12,44 @@
     "observed": [
       "Ghassan Malkawi"
     ],
-    "basis": "Latest explicit author instruction"
+    "basis": "Repository/archive creator metadata"
   },
-  "draft_zenodo_creator_consistency": {
+  "zenodo_creator_consistency": {
     "status": "PASS",
     "executed": true,
     "observed": [
       "Malkawi, Ghassan"
     ],
-    "scope": "Local metadata draft only; no Zenodo record exists"
+    "doi": "10.5281/zenodo.22737921",
+    "scope": "Zenodo v1.0.1 repository/archive record; associated-manuscript authorship is separate"
   },
   "orcid": {
     "status": "OMITTED",
-    "reason": "No confirmed identifier supplied"
+    "reason": "No confirmed repository-creator ORCID supplied"
   },
   "license": {
-    "status": "HOLD",
-    "reason": "Author approval pending"
+    "status": "PASS",
+    "basis": "MIT for original code; CC BY 4.0 for original documentation, figures, and aggregate derived materials where the applicable rightsholder can grant those rights"
   },
   "production_release": {
-    "status": "HOLD",
-    "planned_tag": "v1.0.0"
+    "status": "PASS",
+    "tag": "v1.0.1",
+    "zenodo_doi": "10.5281/zenodo.22737921"
   },
-  "doi": null,
+  "doi": "10.5281/zenodo.22737921",
   "associated_manuscript_authors": {
     "status": "PASS",
-    "source_manuscript_tex_sha256": "b2385709219aeec5f2a246db2ec63a7156185245b2ef1019e47db3f8a264b9e8",
     "observed_order": [
       "Hussein AlWedyan",
+      "Ghassan Malkawi",
+      "Ahmed Abdelaziz Elsayed",
       "Abdulwehab Ibrahim",
       "Ashraf Shalafeh",
-      "Puteri Fahsyar",
       "Mohanad Alata",
-      "Mazin Abuharaz",
       "Mohammad AlWidian"
     ],
-    "scope": "Separate README manuscript authorship; CFF and draft archive creator remain Ghassan Malkawi only."
+    "scope": "Current associated-manuscript authorship listed in README; CFF/Zenodo archive creator remains Ghassan Malkawi only."
   },
-  "cff_sha256": "8c65518ee32b574001fac9e3e10ce82669650b1fc3e9cb50c7a96dd7f16b79a5",
-  "metadata_authority": "CITATION.cff; no .zenodo.json"
+  "cff_sha256": "142389bc1716e1ea775d2f55c1e5747b26cb7afd787657c1c5467393ceb64730",
+  "metadata_authority": "CITATION.cff; Zenodo version DOI 10.5281/zenodo.22737921"
 }
