@@ -1,6 +1,6 @@
 # Exact official data provenance
 
-The following official CDC components were retrieved on 2026-09-13. The hashes identify the bytes actually downloaded during this checkpoint, not an unrecorded historical XPT download. Every response was checked for a SAS XPORT header. No XPT or participant-level table is included in this repository.
+The following official CDC components were retrieved on 2026-09-13. The hashes identify the bytes actually downloaded during checkpoint 2, not an unrecorded historical XPT download. Every response was checked for a SAS XPORT header. No XPT or participant-level table is included in this repository.
 
 | Cycle | File / official download | Documentation | Access date (UTC) | Downloaded SHA-256 |
 | --- | --- | --- | --- | --- |
@@ -28,27 +28,27 @@ The following official CDC components were retrieved on 2026-09-13. The hashes i
 | Component | Variables | Analysis / assay role |
 | --- | --- | --- |
 | DEMO_I.xpt | SEQN, RIDAGEYR, SDMVSTRA, SDMVPSU, WTMEC2YR | Join identifier, age/top coding, survey design and MEC sensitivity weight. |
-| BMX_I.xpt | SEQN, BMXBMI | BMI predictor, kg/m2. |
+| BMX_I.xpt | SEQN, BMXBMI | BMI predictor, kg/m². |
 | GLU_I.xpt | SEQN, LBXGLU, WTSAF2YR | Fasting glucose predictor, mg/dL; fasting-subsample eligibility and sensitivity weight. Released glucose values already incorporate the CDC instrument adjustment; no second bridge. |
 | TRIGLY_I.xpt | SEQN, LBXTR, LBDLDL | Triglyceride predictor, mg/dL; Friedewald LDL for historical missingness reconstruction only. |
 | GHB_I.xpt | SEQN, LBXGH | HbA1c outcome, percent; never a target-training input. |
-| FASTQX_I.xpt | SEQN, PHAFSTHR, PHAFSTMN | Fasting duration. Explicit source-cycle gate; auxiliary provenance for temporal cycles, which use the frozen positive-weight gate. |
+| FASTQX_I.xpt | SEQN, PHAFSTHR, PHAFSTMN | Fasting duration. Auxiliary provenance for the backward target; the frozen target gate is preserved. |
 | DEMO_J.xpt | SEQN, RIDAGEYR, SDMVSTRA, SDMVPSU, WTMEC2YR | Join identifier, age/top coding, survey design and MEC sensitivity weight. |
-| BMX_J.xpt | SEQN, BMXBMI | BMI predictor, kg/m2. |
+| BMX_J.xpt | SEQN, BMXBMI | BMI predictor, kg/m². |
 | GLU_J.xpt | SEQN, LBXGLU, WTSAF2YR | Fasting glucose predictor, mg/dL; fasting-subsample eligibility and sensitivity weight. |
 | TRIGLY_J.xpt | SEQN, LBXTR, LBDLDL | Triglyceride predictor, mg/dL; Friedewald LDL for historical missingness reconstruction only. |
-| GHB_J.xpt | SEQN, LBXGH | HbA1c outcome, percent; never a target-training input. |
-| FASTQX_J.xpt | SEQN, PHAFSTHR, PHAFSTMN | Fasting duration. Explicit source-cycle gate; auxiliary provenance for temporal cycles, which use the frozen positive-weight gate. |
+| GHB_J.xpt | SEQN, LBXGH | HbA1c outcome, percent; never a model input. |
+| FASTQX_J.xpt | SEQN, PHAFSTHR, PHAFSTMN | Fasting duration used by the corrected source eligibility gate. |
 | DEMO_L.xpt | SEQN, RIDAGEYR, SDMVSTRA, SDMVPSU, WTMEC2YR | Join identifier, age/top coding, survey design and MEC sensitivity weight. |
-| BMX_L.xpt | SEQN, BMXBMI | BMI predictor, kg/m2. |
-| GLU_L.xpt | SEQN, LBXGLU, WTSAF2YR | Fasting glucose predictor, mg/dL; fasting-subsample eligibility and sensitivity weight. |
-| TRIGLY_L.xpt | SEQN, LBXTLG, LBDLDL | New triglyceride assay; frozen backward bridge: old-scale TG = -12.19 + 0.9785 * LBXTLG. LDL is not an eligibility gate. |
-| GHB_L.xpt | SEQN, LBXGH | HbA1c outcome, percent; never a target-training input. |
-| FASTQX_L.xpt | SEQN, PHAFSTHR, PHAFSTMN | Fasting duration. Explicit source-cycle gate; auxiliary provenance for temporal cycles, which use the frozen positive-weight gate. |
+| BMX_L.xpt | SEQN, BMXBMI | BMI predictor, kg/m². |
+| GLU_L.xpt | SEQN, LBXGLU, WTSAF2YR | Fasting glucose predictor, mg/dL; fasting-subsample weight. |
+| TRIGLY_L.xpt | SEQN, LBXTLG, LBDLDL | New triglyceride assay; frozen backward bridge: old-scale TG = -12.19 + 0.9785 × LBXTLG. LDL is not an eligibility gate. |
+| GHB_L.xpt | SEQN, LBXGH | HbA1c outcome, percent; never a model input. |
+| FASTQX_L.xpt | SEQN, PHAFSTHR, PHAFSTMN | Fasting duration metadata; no new post hoc target exclusion is introduced. |
 
-All joins use `SEQN`. Age is the released value; 80 denotes 80+. The frozen source rule is age >=20, complete model variables, positive `WTSAF2YR`, and `480 <= 60*PHAFSTHR+PHAFSTMN < 1440`. LDL completeness belongs only to the historical reconstruction. Temporal I/L rules use the frozen positive-fasting-weight gate; the auxiliary FASTQX downloads do not add a new target exclusion.
+All joins use `SEQN`. Age is the released value; 80 denotes 80+. The locked source rule is age ≥20, complete model variables, positive `WTSAF2YR`, and `480 <= 60*PHAFSTHR+PHAFSTMN < 1440`. LDL completeness belongs only to the historical reconstruction. Temporal I/L rules preserve the frozen target eligibility definitions; auxiliary FASTQX downloads do not add a new target exclusion.
 
-The backward TG equation comes from [TRIGLY_L assay documentation](https://wwwn.cdc.gov/Nchs/Data/Nhanes/Public/2021/DataFiles/TRIGLY_L.htm). I-cycle released glucose already includes the applicable CDC equipment adjustment; the locked analysis applies no second glucose bridge. See [GLU_I](https://wwwn.cdc.gov/Nchs/Data/Nhanes/Public/2015/DataFiles/GLU_I.htm) and [GLU_J](https://wwwn.cdc.gov/Nchs/Data/Nhanes/Public/2017/DataFiles/GLU_J.htm). Source fasting-duration fields are in [FASTQX_J](https://wwwn.cdc.gov/Nchs/Data/Nhanes/Public/2017/DataFiles/FASTQX_J.htm).
+The backward TG equation comes from [TRIGLY_L assay documentation](https://wwwn.cdc.gov/Nchs/Data/Nhanes/Public/2021/DataFiles/TRIGLY_L.htm). I-cycle released glucose already includes the applicable CDC equipment adjustment; the locked analysis applies no second glucose bridge. See [GLU_I](https://wwwn.cdc.gov/Nchs/Data/Nhanes/Public/2015/DataFiles/GLU_I.htm) and [GLU_J](https://wwwn.cdc.gov/Nchs/Data/Nhanes/Public/2017/DataFiles/GLU_J.htm). Source fasting-duration fields are documented in [FASTQX_J](https://wwwn.cdc.gov/Nchs/Data/Nhanes/Public/2017/DataFiles/FASTQX_J.htm).
 
 ## Repeat retrieval privately
 
@@ -56,6 +56,8 @@ The backward TG equation comes from [TRIGLY_L assay documentation](https://wwwn.
 python scripts/retrieve_nhanes.py --output-dir .local/evidence/nhanes --manifest .local/retrieved_components.json --verify-against verification/data_provenance.json
 ```
 
-The downloader fails if a retrieved file differs from the recorded SHA-256. Investigate a changed official source; never replace the locked hash just to pass. The historical assay ledger's analysis-input hashes refer to derived tables and are not mislabeled as XPT hashes here.
+The downloader fails if a retrieved file differs from the recorded SHA-256. Investigate a changed official source; never replace the locked hash merely to obtain PASS. The historical assay ledger's analysis-input hashes refer to derived analysis tables and are not mislabeled as XPT hashes here.
 
-The scientific run stopped at a reconstructed-table fasting-weight discrepancy. Fresh corrected-cohort and temporal eligibility checks remain HOLD; a download is not a successful cohort reconstruction. See [the scientific report](../docs/SCIENTIFIC_VERIFICATION.md).
+## Verification status
+
+The source-reconstruction and target-cohort check families are now closed PASS. The initial `WTSAF2YR` stop was adjudicated as decimal representation only: the archived maximum `944153.2498` is the rounded representation of the CDC-published maximum `944153.24975`, and the difference cannot change a zero-versus-positive fasting eligibility decision. See [`verification/fasting_weight_adjudication.json`](../verification/fasting_weight_adjudication.json) and the [final scientific report](../docs/SCIENTIFIC_VERIFICATION.md).
