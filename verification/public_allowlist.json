@@ -1,4 +1,5 @@
 [
+  ".gitattributes",
   ".gitignore",
   "analysis/README.md",
   "CITATION.cff",

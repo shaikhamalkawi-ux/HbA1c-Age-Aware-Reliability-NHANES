@@ -1,6 +1,6 @@
 {
   "scope": "Text scaffold allowlist and specified lexical checks only; no numerical or license verification",
-  "files_scanned": 28,
+  "files_scanned": 29,
   "status": "PASS",
   "findings": []
 }
