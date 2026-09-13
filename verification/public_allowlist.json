@@ -3,6 +3,7 @@
   ".github/workflows/integrity.yml",
   ".gitignore",
   "CITATION.cff",
+  "CONTENT_LICENSE.md",
   "LICENSE",
   "LICENSE_PENDING.md",
   "README.md",
