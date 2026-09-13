@@ -6,7 +6,7 @@ This repository makes the locked study's source reconstruction, leakage-free eva
 
 > **Age did not consistently justify separate point-prediction models, but it mattered more strongly for predictive reliability/calibration.**
 
-**Scientific QA is closed PASS: 16/16 registered check families PASS.** The earlier `WTSAF2YR` stop was adjudicated as a decimal-representation difference that cannot alter the zero-versus-positive fasting eligibility gate; the exact evidence is recorded in [`verification/fasting_weight_adjudication.json`](verification/fasting_weight_adjudication.json). This branch is the **v1.0.0 release candidate**. Production release and Zenodo remain on hold only for author-approved licensing, Git-history privacy cleanup, and final public-release QA.
+**Scientific QA is closed PASS: 16/16 registered check families PASS.** The earlier `WTSAF2YR` stop was adjudicated as a decimal-representation difference that cannot alter the zero-versus-positive fasting eligibility gate; the exact evidence is recorded in [`verification/fasting_weight_adjudication.json`](verification/fasting_weight_adjudication.json). This branch is the **v1.0.0 release candidate**. The license gate is now PASS. Production release and Zenodo remain on hold only for Git-history privacy cleanup and final public-release QA.
 
 ## What was audited and corrected?
 
@@ -91,6 +91,14 @@ Raw NHANES XPT files and participant-level analytic tables are not redistributed
 
 The repository intentionally excludes literature/publisher PDFs, journal correspondence, private conversations, manuscripts, private contact files, participant-level derived tables, and internal project-transfer archives.
 
+## Licensing
+
+- Original code whose rights the author can grant is released under the **MIT License**; see [`LICENSE`](LICENSE).
+- Original documentation, original figures, and original aggregate derived materials whose rights the applicable rightsholder can grant are released under **CC BY 4.0**; see [`CONTENT_LICENSE.md`](CONTENT_LICENSE.md).
+- Third-party material retains its own terms and is not relicensed by this repository.
+
+The approved mapping is recorded in [`docs/LICENSE_DECISION.md`](docs/LICENSE_DECISION.md).
+
 ## Repository checks
 
 Current repository-integrity checks use only the Python standard library:
@@ -118,7 +126,6 @@ Planned public release: **v1.0.0**. See [`RELEASE_NOTES_v1.0.0.md`](RELEASE_NOTE
 
 Remaining release gates:
 
-1. author approval of the license mapping in [`docs/LICENSE_DECISION.md`](docs/LICENSE_DECISION.md);
-2. Git-history privacy cleanup for the documented historical contact-metadata finding;
-3. final public-release integrity/safety checks after the cleaned history is in place;
-4. GitHub release creation followed by Zenodo ingestion and DOI verification.
+1. Git-history privacy cleanup for the documented historical contact-metadata finding;
+2. final public-release integrity/safety checks after the cleaned history is in place;
+3. GitHub release creation followed by Zenodo ingestion and DOI verification.
