@@ -14,14 +14,14 @@
     ],
     "basis": "Repository/archive creator metadata"
   },
-  "zenodo_creator_consistency": {
+  "historical_zenodo_creator_consistency": {
     "status": "PASS",
     "executed": true,
     "observed": [
       "Malkawi, Ghassan"
     ],
     "doi": "10.5281/zenodo.22737921",
-    "scope": "Zenodo v1.0.1 repository/archive record; associated-manuscript authorship is separate"
+    "scope": "Historical Zenodo v1.0.1 repository/archive record; associated-manuscript authorship is separate"
   },
   "orcid": {
     "status": "OMITTED",
@@ -32,24 +32,25 @@
     "basis": "MIT for original code; CC BY 4.0 for original documentation, figures, and aggregate derived materials where the applicable rightsholder can grant those rights"
   },
   "production_release": {
-    "status": "PASS",
-    "tag": "v1.0.1",
-    "zenodo_doi": "10.5281/zenodo.22737921"
+    "status": "PENDING_ZENODO_ARCHIVAL",
+    "tag": "v1.0.2",
+    "zenodo_doi": null,
+    "historical_v1_0_1_doi": "10.5281/zenodo.22737921"
   },
-  "doi": "10.5281/zenodo.22737921",
   "associated_manuscript_authors": {
     "status": "PASS",
     "observed_order": [
-      "Hussein AlWedyan",
+      "Hussien Alwedyan",
       "Ghassan Malkawi",
       "Ahmed Abdelaziz Elsayed",
       "Abdulwehab Ibrahim",
       "Ashraf Shalafeh",
+      "Rafiq Manna",
       "Mohanad Alata",
-      "Mohammad AlWidian"
+      "Mohammad AlWedian"
     ],
-    "scope": "Current associated-manuscript authorship listed in README; CFF/Zenodo archive creator remains Ghassan Malkawi only."
+    "scope": "Current associated-manuscript authorship listed in README; CFF/archive creator remains Ghassan Malkawi only."
   },
-  "cff_sha256": "142389bc1716e1ea775d2f55c1e5747b26cb7afd787657c1c5467393ceb64730",
-  "metadata_authority": "CITATION.cff; Zenodo version DOI 10.5281/zenodo.22737921"
+  "cff_sha256": "1bf257a64416d8d26969cf3ecbe078acf7a72fd52c1fefbae812849b974be423",
+  "metadata_authority": "CITATION.cff and README.md for v1.0.2 release preparation; version-specific Zenodo DOI pending archival verification"
 }

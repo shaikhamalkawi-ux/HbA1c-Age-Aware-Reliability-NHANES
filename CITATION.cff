@@ -1,11 +1,10 @@
 cff-version: "1.2.0"
-message: "If you use these reproducibility materials, cite this repository/archive and the Zenodo record."
+message: "If you use these reproducibility materials, cite this repository/archive. The version-specific Zenodo DOI for v1.0.2 will be added after archival verification."
 type: software
 repository-code: "https://github.com/shaikhamalkawi-ux/HbA1c-Age-Aware-Reliability-NHANES"
-doi: "10.5281/zenodo.22737921"
 title: "Age-aware HbA1c reliability across NHANES cycles: reproducibility materials"
-version: "1.0.1"
-date-released: "2026-09-13"
+version: "1.0.2"
+date-released: "2026-09-16"
 license: "MIT"
 authors:
   - family-names: "Malkawi"

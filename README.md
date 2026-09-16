@@ -83,20 +83,21 @@ The repository intentionally excludes literature/publisher PDFs, journal corresp
 **Age-Aware Reliability of HbA1c Prediction Across NHANES Cycles: Leakage-Free Evaluation, Conformal Calibration, and Temporal Transport**
 
 Current manuscript author order:
-1. Hussein AlWedyan
+1. Hussien Alwedyan
 2. Ghassan Malkawi
 3. Ahmed Abdelaziz Elsayed
 4. Abdulwehab Ibrahim
 5. Ashraf Shalafeh
-6. Mohanad Alata
-7. Mohammad AlWidian
+6. Rafiq Manna
+7. Mohanad Alata
+8. Mohammad AlWedian
 
 **Repository/archive creator: Ghassan Malkawi. Repository/archive creation and associated-manuscript authorship are separate roles.**
 
 ## Archival record
 
-- GitHub release: **v1.0.1**
-- Zenodo version DOI: **10.5281/zenodo.22737921**
-- DOI link: https://doi.org/10.5281/zenodo.22737921
+- Release target: **v1.0.2**
+- Previous archived version: **v1.0.1**, Zenodo DOI **10.5281/zenodo.22737921**
+- v1.0.2 Zenodo DOI: **pending archival verification**
 
 Repository citation metadata are maintained in [`CITATION.cff`](CITATION.cff).

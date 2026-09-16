@@ -9,6 +9,8 @@ The release publishes public-safe documentation, verification code, exact source
 - `README.md`
 - `CITATION.cff`
 - `RELEASE_NOTES_v1.0.0.md`
+- `RELEASE_NOTES_v1.0.1.md`
+- `RELEASE_NOTES_v1.0.2.md`
 - `LICENSE` — MIT for original code where the author has authority to grant it
 - `CONTENT_LICENSE.md` — CC BY 4.0 for original documentation, original figures, and original aggregate derived materials where the applicable rightsholder has authority to grant it
 - `docs/CLAIM_BOUNDARIES.md`
@@ -57,11 +59,6 @@ The release publishes public-safe documentation, verification code, exact source
 
 The public repository is intended to expose enough aggregate evidence, code, source hashes and provenance to inspect the reported analysis without republishing participant-level records.
 
-## Remaining production gates
+## Current archival gate
 
-The license gate is complete. Before `v1.0.0`:
-
-1. close the documented Git-history contact-metadata finding and rerun the all-history scan;
-2. regenerate the exact allowlist, manifest and public-content report for the final production commit;
-3. add the verified release date to `CITATION.cff` at the time of the actual production release;
-4. create the GitHub release and verify Zenodo ingestion/DOI metadata.
+The scientific and public-safety gates are closed PASS. For `v1.0.2`, the remaining external archival step is to create the GitHub release and verify the new Zenodo version record/DOI. The historical `v1.0.1` tag and Zenodo record remain unchanged.
