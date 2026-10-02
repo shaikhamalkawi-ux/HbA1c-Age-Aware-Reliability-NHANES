@@ -1,56 +1,26 @@
 {
-  "cff_schema_validation": {
-    "status": "PASS",
-    "executed": true,
-    "schema_version": "1.2.0",
-    "schema_url": "https://raw.githubusercontent.com/citation-file-format/citation-file-format/1.2.0/schema.json",
-    "schema_sha256": "0b8d22140da702d766df318dcff3a91af2f39521298dcf36d76315fd99cc169b"
-  },
   "repository_author": {
     "status": "PASS",
-    "executed": true,
-    "observed": [
-      "Ghassan Malkawi"
-    ],
-    "basis": "Repository/archive creator metadata"
+    "observed": ["Ghassan Malkawi"],
+    "basis": "Repository creator metadata"
   },
-  "historical_zenodo_creator_consistency": {
-    "status": "PASS",
-    "executed": true,
-    "observed": [
-      "Malkawi, Ghassan"
-    ],
-    "doi": "10.5281/zenodo.22737921",
-    "scope": "Historical Zenodo v1.0.1 repository/archive record; associated-manuscript authorship is separate"
+  "public_reproducibility_route": {
+    "status": "GITHUB_ONLY",
+    "repository": "https://github.com/shaikhamalkawi-ux/HbA1c-Age-Aware-Reliability-NHANES",
+    "zenodo_required": false
   },
-  "orcid": {
-    "status": "OMITTED",
-    "reason": "No confirmed repository-creator ORCID supplied"
-  },
-  "license": {
-    "status": "PASS",
-    "basis": "MIT for original code; CC BY 4.0 for original documentation, figures, and aggregate derived materials where the applicable rightsholder can grant those rights"
-  },
-  "production_release": {
-    "status": "PENDING_ZENODO_ARCHIVAL",
-    "tag": "v1.0.2",
-    "zenodo_doi": null,
-    "historical_v1_0_1_doi": "10.5281/zenodo.22737921"
-  },
-  "associated_manuscript_authors": {
-    "status": "PASS",
-    "observed_order": [
+  "associated_manuscript": {
+    "title": "Subgroup Calibration of HbA1c Predictions Across NHANES Cycles: Partition Choice and Temporal Transport",
+    "authors": [
       "Hussien Alwedyan",
       "Ghassan Malkawi",
       "Ahmed Abdelaziz Elsayed",
       "Abdulwehab Ibrahim",
-      "Ashraf Shalafeh",
+      "Ashraf AlShalalfeh",
       "Rafiq Manna",
       "Mohanad Alata",
       "Mohammad AlWedian"
-    ],
-    "scope": "Current associated-manuscript authorship listed in README; CFF/archive creator remains Ghassan Malkawi only."
+    ]
   },
-  "cff_sha256": "1bf257a64416d8d26969cf3ecbe078acf7a72fd52c1fefbae812849b974be423",
-  "metadata_authority": "CITATION.cff and README.md for v1.0.2 release preparation; version-specific Zenodo DOI pending archival verification"
+  "metadata_authority": "CITATION.cff and README.md"
 }
