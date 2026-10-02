@@ -1,0 +1,23 @@
+analysis,metric,value,unit_or_note
+point_refit_200,mean_pooled_ols_rmse,0.573505,HbA1c percentage points
+point_refit_200,mean_hard_age_ols_rmse,0.577028,HbA1c percentage points
+point_refit_200,mean_hard_minus_pooled_rmse,0.003523,HbA1c percentage points
+point_refit_200,hard_age_worse_share,0.91,proportion
+psu_grouped_200,mean_hard_minus_pooled_rmse,0.003935,HbA1c percentage points
+psu_grouped_200,hard_age_worse_share,0.985,proportion
+calibration_200,global_mean_age_spread,7.40,percentage points
+calibration_200,age_mondrian_mean_age_spread,4.27,percentage points
+calibration_200,glucose_mondrian_mean_age_spread,2.51,percentage points
+calibration_200,predicted_hba1c_bins_mean_age_spread,4.18,percentage points
+fixed_forward_bootstrap,spread_change_age_mondrian_minus_global,-2.66,percentage points
+fixed_forward_bootstrap,spread_change_95_low,-6.15,percentage points
+fixed_forward_bootstrap,spread_change_95_high,0.32,percentage points
+fixed_forward_bootstrap,min_coverage_change,-0.33,percentage points
+fixed_forward_bootstrap,min_coverage_change_95_low,-1.75,percentage points
+fixed_forward_bootstrap,min_coverage_change_95_high,2.30,percentage points
+survey_forward,weighted_citl,-0.0122,observed minus predicted
+survey_forward,weighted_citl_se,0.0154,standard error
+case_mix,observed_forward_rmse,0.5677,HbA1c percentage points
+case_mix,source_composition_standardized_forward_rmse,0.5988,HbA1c percentage points
+raw_vs_bridged_tg_ols,bridged_rmse,0.56769595,HbA1c percentage points
+raw_vs_bridged_tg_ols,raw_rmse,0.56770187,HbA1c percentage points
