@@ -2,13 +2,10 @@
 
 Only non-participant aggregate verification outputs are published here. Participant-level cohorts, predictions, calibration residuals, split ledgers, and private research archives remain excluded.
 
-Published aggregate files:
+Original submitted-analysis aggregate files include point-model metrics, paired bootstrap contrasts, primary interval metrics, temporal metrics, recovered CQR metrics, and legacy ANFIS verification.
 
-- `point_model_metrics.csv` — repeated-OOF point-model metrics.
-- `point_model_paired_bootstrap.csv` — paired RMSE contrasts and participant-bootstrap 95% CIs.
-- `primary_interval_metrics.csv` — primary global and age-Mondrian 90% coverage, widths, and interval scores.
-- `temporal_metrics.csv` — backward/forward temporal counts, age counts, RMSE, and calibration slopes.
-- `recovered_original_cqr_metrics.csv` — recovered original secondary CQR aggregate interval metrics; no original learner-refit claim.
-- `legacy_anfis_verification.csv` — historical fixed-FIS structural/prediction verification summary; not a superiority result.
+Major-revision public-safe summaries:
+- revision_r1_2/README.md
+- revision_r1_2/summary.csv
 
-Machine-readable scientific status is in [`verification/scientific_checks_final.json`](../verification/scientific_checks_final.json). See [scientific verification](../docs/SCIENTIFIC_VERIFICATION.md) for interpretation and claim boundaries.
+Machine-readable original scientific status is in verification/scientific_checks_final.json.
