@@ -14,9 +14,11 @@ Scientific verification of the original submitted analysis remains closed PASS: 
 - [Published article (Version of Record)](https://www.mdpi.com/2306-5354/13/11/1373)
 - [Article DOI](https://doi.org/10.3390/bioengineering13111373)
 - [Official supplementary materials on the publisher's website](https://www.mdpi.com/2306-5354/13/11/1373#supplementary)
+- [Published complete research archive (Zenodo DOI 10.5281/zenodo.24542980)](https://doi.org/10.5281/zenodo.24542980)
+- [Publication archive release with downloadable supplementary files](https://github.com/shaikhamalkawi-ux/HbA1c-Age-Aware-Reliability-NHANES/releases/tag/v1.0.3)
 - [Public aggregate sensitivity summaries in this repository](derived_outputs/revision_r1_2/)
 
-The publisher's supplementary files are the authoritative publication supplements. This repository provides the public computational and aggregate verification materials separately; it does not currently mirror the publisher's PDF/ZIP files. No participant-level records or predictions are redistributed.
+The publisher's supplementary files are the authoritative publication supplements. The Zenodo deposit and GitHub release include exact copies of the publisher's article PDF, final supplementary PDF, and supplementary ZIP, alongside the public computational and aggregate verification materials. The GitHub source tree remains text-only. No participant-level records or predictions are redistributed.
 
 ## Source reconstruction
 
@@ -81,6 +83,6 @@ Repository creator: Ghassan Malkawi. Repository creation and associated-manuscri
 
 ## Citation and repository record
 
-Use the article DOI for the published research article, the publisher's supplementary-materials page for the official supplements, and this GitHub repository for the public reproducibility and verification materials. Historical software release identifiers refer to their corresponding repository snapshots, not to the published article.
+Use the article DOI for the published research article, the publisher's supplementary-materials page for the official supplements, and [Zenodo DOI 10.5281/zenodo.24542980](https://doi.org/10.5281/zenodo.24542980) for the complete published research archive. The [v1.0.3 GitHub release](https://github.com/shaikhamalkawi-ux/HbA1c-Age-Aware-Reliability-NHANES/releases/tag/v1.0.3) mirrors the public archive and its key standalone files. Historical software release identifiers refer to their corresponding repository snapshots, not to the published article.
 
 Repository citation metadata are maintained in CITATION.cff.

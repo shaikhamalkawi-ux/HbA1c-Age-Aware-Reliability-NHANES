@@ -13,6 +13,6 @@ Intentionally excluded:
 - manuscript PDFs/source, journal correspondence, reviewer packages and chat-transfer archives;
 - credentials, tokens and private contact files.
 
-## Current publication route
+## Published archive
 
-The current manuscript cites this GitHub repository as its public reproducibility resource. No Zenodo deposit or DOI is required for the resubmission.
+The published article has DOI [10.3390/bioengineering13111373](https://doi.org/10.3390/bioengineering13111373). The complete public research archive is independently published at [Zenodo DOI 10.5281/zenodo.24542980](https://doi.org/10.5281/zenodo.24542980). The publication-related [v1.0.3 GitHub release](https://github.com/shaikhamalkawi-ux/HbA1c-Age-Aware-Reliability-NHANES/releases/tag/v1.0.3) provides the same archive ZIP and standalone publisher supplementary files. Its README, inventory, SHA-256 manifest, and verification report document provenance and the limits of rerunning all experiments.

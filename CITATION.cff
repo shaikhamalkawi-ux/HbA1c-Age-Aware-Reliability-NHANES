@@ -3,8 +3,10 @@ message: "If you use these reproducibility materials, cite this GitHub repositor
 type: software
 repository-code: "https://github.com/shaikhamalkawi-ux/HbA1c-Age-Aware-Reliability-NHANES"
 title: "Subgroup calibration of HbA1c predictions across NHANES cycles: reproducibility materials"
-version: "1.0.2"
-date-released: "2026-09-16"
+version: "1.0.3"
+date-released: "2026-11-26"
+doi: "10.5281/zenodo.24542980"
+url: "https://zenodo.org/records/24542980"
 license: "MIT"
 authors:
   - family-names: "Malkawi"
