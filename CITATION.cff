@@ -1,5 +1,5 @@
 cff-version: "1.2.0"
-message: "If you use these reproducibility materials, cite this GitHub repository."
+message: "If you use these reproducibility materials, cite this GitHub repository and the associated published article as appropriate."
 type: software
 repository-code: "https://github.com/shaikhamalkawi-ux/HbA1c-Age-Aware-Reliability-NHANES"
 title: "Subgroup calibration of HbA1c predictions across NHANES cycles: reproducibility materials"
@@ -17,3 +17,31 @@ keywords:
   - conformal prediction
   - subgroup calibration
   - temporal transport
+preferred-citation:
+  type: article
+  title: "Subgroup Calibration of HbA1c Predictions Across NHANES Cycles: Partition Choice and Temporal Transport"
+  authors:
+    - family-names: "Alwedyan"
+      given-names: "Hussien"
+    - family-names: "Malkawi"
+      given-names: "Ghassan"
+    - family-names: "Elsayed"
+      given-names: "Ahmed Abdelaziz"
+    - family-names: "Ibrahim"
+      given-names: "Abdulwehab"
+    - family-names: "AlShalalfeh"
+      given-names: "Ashraf"
+    - family-names: "Manna"
+      given-names: "Rafiq"
+    - family-names: "Alata"
+      given-names: "Mohanad"
+    - family-names: "AlWedian"
+      given-names: "Mohammad"
+  journal: "Bioengineering"
+  year: 2026
+  month: 11
+  volume: 13
+  issue: 11
+  article-number: "1373"
+  doi: "10.3390/bioengineering13111373"
+  url: "https://www.mdpi.com/2306-5354/13/11/1373"

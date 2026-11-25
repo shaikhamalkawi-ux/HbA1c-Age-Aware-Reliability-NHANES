@@ -6,6 +6,18 @@ This repository provides public reproducibility and verification materials for t
 
 Scientific verification of the original submitted analysis remains closed PASS: **16/16 registered scientific check families PASS**. It does not claim fresh end-to-end retraining of every model family from raw CDC files.
 
+## Published article and official supplementary materials
+
+**Subgroup Calibration of HbA1c Predictions Across NHANES Cycles: Partition Choice and Temporal Transport**  
+*Bioengineering* 2026, 13(11), 1373. Published 18 November 2026.
+
+- [Published article (Version of Record)](https://www.mdpi.com/2306-5354/13/11/1373)
+- [Article DOI](https://doi.org/10.3390/bioengineering13111373)
+- [Official supplementary materials on the publisher's website](https://www.mdpi.com/2306-5354/13/11/1373#supplementary)
+- [Public aggregate sensitivity summaries in this repository](derived_outputs/revision_r1_2/)
+
+The publisher's supplementary files are the authoritative publication supplements. This repository provides the public computational and aggregate verification materials separately; it does not currently mirror the publisher's PDF/ZIP files. No participant-level records or predictions are redistributed.
+
 ## Source reconstruction
 
 The historical analysis used a table of 2,325 adults. All 2,325 rows were linked uniquely to NHANES 2017-2018 using exact agreement at the stored precision on age, BMI, fasting glucose, triglycerides, HbA1c, and Friedewald LDL: **2,325 exact unique matches, 0 ambiguous, 0 unmatched**.
@@ -55,7 +67,7 @@ Raw NHANES XPT files, participant-level analytic tables, and participant-level p
 
 **Subgroup Calibration of HbA1c Predictions Across NHANES Cycles: Partition Choice and Temporal Transport**
 
-Current manuscript author order:
+Published article author order:
 1. Hussien Alwedyan
 2. Ghassan Malkawi
 3. Ahmed Abdelaziz Elsayed
@@ -69,6 +81,6 @@ Repository creator: Ghassan Malkawi. Repository creation and associated-manuscri
 
 ## Citation and repository record
 
-For the current manuscript, the public reproducibility route is this **GitHub repository only**. No Zenodo DOI is cited or required for the resubmission.
+Use the article DOI for the published research article, the publisher's supplementary-materials page for the official supplements, and this GitHub repository for the public reproducibility and verification materials. Historical software release identifiers refer to their corresponding repository snapshots, not to the published article.
 
 Repository citation metadata are maintained in CITATION.cff.

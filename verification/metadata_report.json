@@ -1,7 +1,9 @@
 {
   "repository_author": {
     "status": "PASS",
-    "observed": ["Ghassan Malkawi"],
+    "observed": [
+      "Ghassan Malkawi"
+    ],
     "basis": "Repository creator metadata"
   },
   "public_reproducibility_route": {
@@ -20,7 +22,19 @@
       "Rafiq Manna",
       "Mohanad Alata",
       "Mohammad AlWedian"
-    ]
+    ],
+    "publication": {
+      "status": "PUBLISHED",
+      "date": "2026-11-18",
+      "journal": "Bioengineering",
+      "volume": 13,
+      "issue": 11,
+      "article_number": "1373",
+      "doi": "10.3390/bioengineering13111373",
+      "url": "https://www.mdpi.com/2306-5354/13/11/1373",
+      "official_supplementary_materials_url": "https://www.mdpi.com/2306-5354/13/11/1373#supplementary",
+      "publisher_files_mirrored": false
+    }
   },
   "metadata_authority": "CITATION.cff and README.md"
 }

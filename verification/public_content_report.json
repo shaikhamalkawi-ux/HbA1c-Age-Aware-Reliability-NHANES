@@ -1,6 +1,10 @@
 {
-  "scope": "Exact public text allowlist and specified lexical checks only; history, numerical and license verification are separate",
-  "files_scanned": 64,
+  "scope": "Publication-metadata delta audit; unchanged blobs retain their archived baseline identities. Changed public text was screened for the existing lexical safety patterns. This is not a new full-history audit or scientific rerun.",
+  "files_scanned": 66,
   "status": "PASS",
-  "findings": []
+  "findings": [],
+  "baseline_commit": "6d8dfef479a8d541771027d4435d583f2f1fea09",
+  "changed_nonmetadata_files_screened": 7,
+  "publication_metadata_files_screened": 6,
+  "prior_archived_file_count": 64
 }
